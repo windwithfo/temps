@@ -1,0 +1,23 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "chrome": 52,
+        "browsers": ["last 2 versions", "safari >= 7"]
+      },
+      "useBuiltIns": true
+    }],
+    "stage-2"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-decorators-legacy",
+     ["component",
+       {
+         "libraryName": "element-ui",
+         "styleLibraryName": "theme-chalk"
+       }
+     ]
+  ],
+  "comments": false
+}

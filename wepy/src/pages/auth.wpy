@@ -1,0 +1,33 @@
+<style lang="less">
+  .auth {
+    font-size: 24rpx;
+  }
+</style>
+
+<template lang="pug">
+  view.container
+    |使用当前功能，需要您对小程序进行授权，请点击下面的授权按钮完成授权后返回继续使用。
+    button(open-type="getUserInfo" class="auth") 授权
+    button(class="auth" @tap="back") 继续使用
+</template>
+
+<script>
+  import wepy     from 'wepy'
+  import logMixin from '@/mixins/log'
+
+  export default class Auth extends wepy.page {
+    config = {
+      navigationBarTitleText: '授权'
+    }
+
+    methods = {
+      // 返回首页
+      back() {
+        wepy.navigateBack()
+      }
+    }
+
+    // 全局mixin
+    mixins = [logMixin]
+  }
+</script>

@@ -1,0 +1,22 @@
+<style lang="less">
+  .flex {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>
+
+<template lang="pug">
+  view.flex
+    slot(name="left")
+    slot
+    slot(name="right")
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Flex extends wepy.component {
+  }
+</script>
