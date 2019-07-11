@@ -2,7 +2,6 @@
   "name": "@windwithfo/vue",
   "version": "1.0.0",
   "description": "A Vue.js project for multi pages",
-  "repository": "https://github.com/windwithfo/vue2-multi.git",
   "author": "windwithfo",
   "license": "MIT",
   "dependencies": {

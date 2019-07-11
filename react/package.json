@@ -2,7 +2,6 @@
   "name": "@windwithfo/react",
   "version": "1.0.0",
   "description": "A react template project",
-  "repository": "https://github.com/windwithfo/react-temp.git",
   "main": "index.js",
   "author": "windwithfo",
   "license": "MIT",
