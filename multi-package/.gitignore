@@ -1,4 +1,7 @@
 # System
+.DS_Store
+.idea
+package-lock.json
 **/.DS_Store
 **/.idea
 **/package-lock.json
@@ -38,6 +41,7 @@ bower_components
 build/Release
 
 # Dependency directories
+node_modules/
 **/node_modules/
 jspm_packages/
 
