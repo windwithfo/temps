@@ -44,6 +44,8 @@
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
     "url-loader": "^2.1.0",
     "vue-loader": "^15.3.0",
     "vue-property-decorator": "^8.2.1",

@@ -24,6 +24,8 @@
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "@types/react": "^16.8.24",
+    "@types/styled-jsx": "^2.2.8",
     "autoprefixer": "^9.1.1",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
@@ -50,6 +52,8 @@
     "stylelint": "^10.1.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.10.5",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
     "url-loader": "^2.1.0",
     "webpack": "^4.39.1"
   },

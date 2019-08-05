@@ -6,7 +6,7 @@
 module.exports = {
   index: {
     template: 'html.ejs',
-    path: 'view/index/index.jsx',
+    path: 'view/index/index',
     title: 'index',
     meta: {
       keywords: 'index',
@@ -18,7 +18,7 @@ module.exports = {
   },
   page1: {
     template: 'html.ejs',
-    path: 'view/page1/page1.jsx',
+    path: 'view/page1/page1',
     title: 'page1',
     meta: {
       keywords: 'page1',
@@ -30,7 +30,7 @@ module.exports = {
   },
   page2: {
     template: 'html.ejs',
-    path: 'view/page2/page2.jsx',
+    path: 'view/page2/page2',
     title: 'page2',
     meta: {
       keywords: 'page2',
