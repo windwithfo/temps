@@ -1,3 +1,8 @@
+/**
+ * @file babel配置
+ * @author dongkunshan(windwithfo@yeah.net)
+ */
+
 module.exports = {
   presets: [
     ['@babel/env', {

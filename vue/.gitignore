@@ -2,6 +2,9 @@
 .DS_Store
 .idea
 package-lock.json
+dist
+static/dll.*.js
+static/vendor*.json
 
 # Logs
 logs

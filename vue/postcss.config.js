@@ -1,6 +1,6 @@
 /**
  * @file postcss配置
- * @author dongkunshan(dongkunshan@xueleyun.com)
+ * @author dongkunshan(windwithfo@yeah.net)
  */
 
 module.exports = {
