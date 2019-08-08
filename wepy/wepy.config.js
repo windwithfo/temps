@@ -1,5 +1,7 @@
 const path = require('path');
-const LessPluginAutoPrefix = require('less-plugin-autoprefix');
+const cssnext = require('cssnext');
+const eslint = require('@wepy/plugin-eslint');
+const TypeScriptCompiler = require('@wepy/compiler-typescript');
 var prod = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -7,14 +9,10 @@ module.exports = {
   eslint: true,
   cliLogs: !prod,
   build: {
-    web: {
-      htmlTemplate: path.join('src', 'index.template.html'),
-      htmlOutput: path.join('web', 'index.html'),
-      jsOutput: path.join('web', 'index.js')
-    }
   },
   resolve: {
     alias: {
+      counter: path.join(__dirname, 'src/components/counter'),
       '@': path.join(__dirname, 'src')
     },
     aliasFields: ['wepy', 'weapp'],
@@ -22,56 +20,70 @@ module.exports = {
   },
   compilers: {
     less: {
-      compress: prod,
-      plugins: [new LessPluginAutoPrefix({browsers: ['Android >= 2.3', 'Chrome > 20', 'iOS >= 6']})]
+      compress: prod
     },
-    /*sass: {
-      outputStyle: 'compressed'
-    },*/
     babel: {
       sourceMap: true,
       presets: [
-        'env'
+        '@babel/preset-env',
+        // @babel/preset-typescript'
       ],
       plugins: [
-        'syntax-export-extensions',
-        'transform-class-properties',
-        'transform-decorators-legacy',
-        'transform-object-rest-spread',
-        'transform-export-extensions'
+        '@wepy/babel-plugin-import-regenerator'
       ]
     },
-    pug: {}
+    postcss: {
+      plugins: [
+        cssnext({
+          browsers:['iOS 9', 'Android 4.4']
+        })
+      ],
+      map: {
+        inline: true
+      }
+    }
   },
-  plugins: {
-  },
+  plugins: [
+    eslint({
+      fix: true
+    }),
+    TypeScriptCompiler({
+      "compileOnSave": false,
+      "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "jsx": "preserve",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "noUnusedLocals": true,
+        "experimentalDecorators": true,
+        "noUnusedParameters": true,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "typeRoots": [
+          "./node_modules/@types",
+          "./@types"
+        ],
+        "lib": [
+          "dom",
+          "es2017"
+        ],
+        "paths": {
+          "@": ["src"],
+          "component": ["src/components"],
+          "asset": ["src/assets"],
+          "view": ["src/pages"]
+        }
+      }
+    }
+    )
+  ],
   appConfig: {
     noPromiseAPI: ['createSelectorQuery']
   }
 }
 
-if (prod) {
-
-  // 压缩sass
-  // module.exports.compilers['sass'] = {outputStyle: 'compressed'}
-
-  // 压缩js
-  module.exports.plugins = {
-    uglifyjs: {
-      filter: /\.js$/,
-      config: {
-      }
-    },
-    imagemin: {
-      filter: /\.(jpg|png|jpeg)$/,
-      config: {
-        jpg: {
-          quality: 80
-        },
-        png: {
-          quality: 80
-        }
-      }
-    }
-  }
-}

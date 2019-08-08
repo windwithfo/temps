@@ -1,15 +1,13 @@
 {
-	"description": "A WePY project",
-	"setting": {
-		"urlCheck": true,
-		"es6": false,
-		"postcss": false,
-		"minified": false,
-		"newFeature": true
-	},
-	"compileType": "miniprogram",
-	"appid": "wx****************",
-	"projectname": "@windwithfo/wepy",
-	"miniprogramRoot": "./dist",
-	"condition": {}
+  "description": "A WePY project",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "wepy-temp",
+  "miniprogramRoot": "./weapp"
 }

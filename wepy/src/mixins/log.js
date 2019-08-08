@@ -1,17 +1,19 @@
-import wepy from 'wepy'
 
-class LogMixin extends wepy.mixin {
-  onRoute() {
-    console.log('mixin onRoute')
-  }
 
-  onShow() {
-    console.log('mixin onShow')
-  }
-
-  onLoad() {
-    console.log('mixin onLoad')
+export default {
+  data: {
+    mixin: 'MixinText'
+  },
+  methods: {
+    mixintap () {
+      this.mixin = 'MixinText' + (Math.random() + '').substring(3, 7);
+      console.log('mixin method tap');
+    },
+    tap () {
+      console.log('tap in mixin');
+    }
+  },
+  created () {
+    console.log('created in mixin');
   }
 }
-
-export default LogMixin

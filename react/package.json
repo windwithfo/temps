@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A react template project",
   "main": "index.js",
-  "author": "windwithfo",
+  "author": "dongkunshan <windwithfo@yeah.net>",
   "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",

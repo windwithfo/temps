@@ -2,7 +2,7 @@
   "name": "@windwithfo/vue",
   "version": "1.0.0",
   "description": "A Vue.js project for multi pages",
-  "author": "windwithfo",
+  "author": "dongkunshan <windwithfo@yeah.net>",
   "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
