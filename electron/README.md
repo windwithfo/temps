@@ -14,6 +14,16 @@ npm run dev
 npm run build
 npm run pub
 
+## build error by downloading used in windows, you can download youself and push to folders.
+
+```
+path: C:\Users\{username}\AppData\Local\electron\Cache\electron-v{version}-{platform}.zip
+path: C:\Users\{username}\AppData\Local\electron\Cache\SHASUMS256.txt-{version}
+path: C:\Users\{username}\AppData\Local\electron-builder\Cache\nsis\nsis-{version}
+path: C:\Users\{username}\AppData\Local\electron-builder\Cache\nsis\nsis-resources-{version}
+path: C:\Users\{username}\AppData\Local\electron-builder\Cache\winCodeSign\winCodeSign-{version}
+```
+
 ## Resources for Learning Electron
 
 - [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
