@@ -6,7 +6,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
 // 首页
-const Index = () => import('./pages/index.vue');
+import Index from './pages/index.vue';
 
 /** 路由配置 */
 const routes = [
