@@ -1,0 +1,95 @@
+@import './variable';
+
+/* 清除浮动 */
+.ks-clear:after,
+.clear:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.ks-clear,
+.clear {
+  *zoom: 1;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.bgfff {
+  background: #fff;
+}
+
+.wid1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.ellipsis {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bg(@val) {
+  background-color: @val;
+}
+
+.fs(@val) {
+  font-size: unit(@val, px);
+}
+
+.mt(@val) {
+  margin-top: unit(@val, px);
+}
+
+.mr(@val) {
+  margin-right: unit(@val, px);
+}
+
+.mb(@val) {
+  margin-bottom: unit(@val, px);
+}
+
+.ml(@val) {
+  margin-left: unit(@val, px);
+}
+
+.pt(@val) {
+  padding-top: unit(@val, px);
+}
+
+.pr(@val) {
+  padding-right: unit(@val, px);
+}
+
+.pb(@val) {
+  padding-bottom: unit(@val, px);
+}
+
+.pl(@val) {
+  padding-left: unit(@val, px);
+}
