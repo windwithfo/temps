@@ -8,7 +8,7 @@ module.exports = {
   libVersion: 3,
   lang: 'js',
   ssr: false,
-  dll: ['vue', 'isomorphic-fetch'],
+  dll: ['vue', 'isomorphic-fetch', 'vuex', 'vue-router'],
   lint: {
     autoFix: true,
     root: 'src',

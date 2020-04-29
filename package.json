@@ -1,6 +1,6 @@
 {
   "name": "@windwithfo/temps",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "temps for https://github.com/windwithfo/cli.git",
   "main": "bin/wc.js",
   "repository": "https://github.com/windwithfo/temps.git",
