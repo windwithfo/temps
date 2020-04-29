@@ -10,7 +10,6 @@
     "element-ui": "^2.4.3",
     "isomorphic-fetch": "^2.2.1",
     "vue": "^3.0.0-beta.4",
-    "vue-lazyload": "^1.2.6",
     "vue-router": "^4.0.0-alpha.7",
     "vuex": "^4.0.0-beta.1"
   },
