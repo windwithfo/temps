@@ -8,6 +8,7 @@ module.exports = {
   wpyExt: '.wpy',
   eslint: true,
   cliLogs: !prod,
+  static: ['static'],
   build: {
   },
   resolve: {
