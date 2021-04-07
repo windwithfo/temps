@@ -4,55 +4,46 @@
  */
 
 // core js
+// components
+import {
+  ElBreadcrumb,
+  ElBreadcrumbItem, ElCheckbox,
+  ElCheckboxGroup,
+  ElMenu,
+  ElMenuItem, ElOption,
+  ElPagination,
+  ElPopover, ElRadio,
+  ElRadioGroup, ElSelect,
+  ElSubmenu, ElTable,
+  ElTableColumn, ElTabPane, ElTabs,
+  ElTree
+} from 'element-plus';
 import { createApp } from 'vue';
-import store  from './store';
-import router from './router';
-
 // pages
 import app from './app.vue';
-
-// components
-// import {
-//   Select,
-//   Radio,
-//   RadioGroup,
-//   Checkbox,
-//   CheckboxGroup,
-//   Option,
-//   Tabs,
-//   TabPane,
-//   Breadcrumb,
-//   BreadcrumbItem,
-//   Table,
-//   TableColumn,
-//   Pagination,
-//   Tree,
-//   Menu,
-//   Submenu,
-//   MenuItem,
-//   Popover
-// } from 'element-ui';
-
-// Vue.use(Select);
-// Vue.use(Radio);
-// Vue.use(RadioGroup);
-// Vue.use(Checkbox);
-// Vue.use(CheckboxGroup);
-// Vue.use(Option);
-// Vue.use(Tabs);
-// Vue.use(TabPane);
-// Vue.use(Breadcrumb);
-// Vue.use(BreadcrumbItem);
-// Vue.use(Table);
-// Vue.use(TableColumn);
-// Vue.use(Pagination);
-// Vue.use(Tree);
-// Vue.use(Menu);
-// Vue.use(Submenu);
-// Vue.use(MenuItem);
-// Vue.use(Popover);
+import router from './router';
+import store from './store';
 
 const _app = createApp(app);
+_app.use(ElSelect);
+_app.use(ElRadio);
+_app.use(ElRadioGroup);
+_app.use(ElCheckbox);
+_app.use(ElCheckboxGroup);
+_app.use(ElOption);
+_app.use(ElTabs);
+_app.use(ElTabPane);
+_app.use(ElBreadcrumb);
+_app.use(ElBreadcrumbItem);
+_app.use(ElTable);
+_app.use(ElTableColumn);
+_app.use(ElPagination);
+_app.use(ElTree);
+_app.use(ElMenu);
+_app.use(ElSubmenu);
+_app.use(ElMenuItem);
+_app.use(ElPopover);
+
 _app.use(store);
 _app.use(router);
 // router.isReady().then(() => _app.mount('#app'));

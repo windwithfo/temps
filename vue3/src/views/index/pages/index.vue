@@ -1,7 +1,7 @@
 <template lang="pug">
 block content
   input(v-model="pageData.list.data.length")
-  //- .index {{ userInfo.name }}
+  .index {{ userInfo.name }}
     el-menu.el-menu-demo(mode="horizontal")
       template(v-for="(item, index) in pageData.nav")
         el-menu-item(v-if="!item.subNav" :index="item.index" :key="index")

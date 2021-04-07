@@ -7,11 +7,11 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "core-js": "^2.6.9",
-    "element-ui": "^2.4.3",
+    "element-plus": "^1.0.2-beta.36",
     "isomorphic-fetch": "^2.2.1",
-    "vue": "^3.0.0-beta.4",
-    "vue-router": "^4.0.0-alpha.7",
-    "vuex": "^4.0.0-beta.1"
+    "vue": "^3.0.11",
+    "vue-router": "^4.0.6",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -49,7 +49,7 @@
     "url-loader": "^2.1.0",
     "vue-class": "^2.0.1",
     "vue-class-component": "^8.0.0-alpha.2",
-    "vue-loader": "^16.0.0-alpha.3",
+    "vue-loader": "^16.2.0",
     "vue-property-decorator": "^8.4.2",
     "vue-style-loader": "^4.1.2",
     "vuex-class": "^0.3.1",

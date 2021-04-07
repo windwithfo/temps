@@ -22,7 +22,7 @@ module.exports = {
     }],
     ['@babel/plugin-proposal-class-properties', { "loose": true }],
     ['component', {
-      libraryName: 'element-ui',
+      libraryName: 'element-plus',
       styleLibraryName: 'theme-chalk'
     }]
   ]
