@@ -3,13 +3,17 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-import 'asset/style/common.less';
-import React        from 'react';
-import store        from './store';
-import ReactDom     from 'react-dom';
+import 'asset/style/common';
 import {
   observer
 } from 'mobx-react';
+import React from 'react';
+import ReactDom from 'react-dom';
+import _JSXStyle from 'styled-jsx/style';
+import store from './store';
+if (typeof global !== 'undefined') {
+  Object.assign(global, { _JSXStyle });
+}
 
 @observer
 class Page extends React.Component {
@@ -58,5 +62,5 @@ class Page extends React.Component {
   }
 }
 
-ReactDom.render(<Page store={store}/>, document.getElementById('root'));
+ReactDom.render(<Page store={store} />, document.getElementById('root'));
 

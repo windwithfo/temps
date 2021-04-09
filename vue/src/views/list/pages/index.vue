@@ -16,7 +16,9 @@
     Component
   } from 'vue-property-decorator';
 
-  @Component
+  @Component({
+    name: 'index'
+  })
   export default class extends Vue {
     mounted() {
       console.log(name);

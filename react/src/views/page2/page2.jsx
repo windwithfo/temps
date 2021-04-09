@@ -4,11 +4,15 @@
  */
 
 import 'asset/style/common';
-import React        from 'react';
-import ReactDom     from 'react-dom';
 import {
   observer
 } from 'mobx-react';
+import React from 'react';
+import ReactDom from 'react-dom';
+import _JSXStyle from 'styled-jsx/style';
+if (typeof global !== 'undefined') {
+  Object.assign(global, { _JSXStyle });
+}
 
 @observer
 class Page extends React.Component {
@@ -65,4 +69,4 @@ function getUrlParam(name, source = '') {
   return '';
 }
 
-ReactDom.render(<Page id={getUrlParam('id')}/>, document.getElementById('root'));
+ReactDom.render(<Page id={getUrlParam('id')} />, document.getElementById('root'));

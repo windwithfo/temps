@@ -104,19 +104,18 @@ block content
     methods: {
       getData() {
         console.log('data');
-      }
-    },
+      },
+      handleClick(tab) {
+        console.log(tab.index);
+      },
 
-    handleClick(tab) {
-      console.log(tab.index);
-    },
+      pageChagen(pageNum) {
+        console.log(pageNum);
+      },
 
-    pageChagen(pageNum) {
-      console.log(pageNum);
-    },
-
-    handleNodeClick(data) {
-      console.log(data.value);
+      handleNodeClick(data) {
+        console.log(data.value);
+      },
     },
   };
 </script>

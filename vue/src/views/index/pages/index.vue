@@ -70,7 +70,9 @@
 
   const userStore = namespace('user');
 
-  @Component
+  @Component({
+    name: 'index'
+  })
   export default class extends Vue {
     @userStore.State userInfo;
 

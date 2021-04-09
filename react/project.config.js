@@ -11,7 +11,7 @@ module.exports = {
   lint: {
     autoFix: true,
     root: 'src',
-    ext: ['.js','.jsx'],
+    ext: ['.js', '.jsx'],
     ignore: ['assets']
   },
   alias: {
@@ -21,7 +21,7 @@ module.exports = {
     assetsRir: 'dist',
     assetsPath: '',
     sourceMap: false,
-    devtool: '#source-map',
+    devtool: 'source-map',
     gzip: true,
     gzipExtensions: ['js', 'css'],
     analyzerReport: false,

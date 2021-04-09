@@ -8,7 +8,9 @@
     Component
   } from 'vue-property-decorator';
 
-  @Component
+  @Component({
+    name: 'list'
+  })
   export default class extends Vue {}
 </script>
 

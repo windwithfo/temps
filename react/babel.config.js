@@ -24,7 +24,7 @@ module.exports = {
     ['@babel/plugin-proposal-class-properties', { "loose": true }],
     ['styled-jsx/babel', {
       optimizeForSpeed: true,
-      plugins: ['styled-jsx-plugin-less']
+      plugins: ['styled-jsx-plugin-sass']
     }],
     ['import', {
       libraryName: 'antd',
