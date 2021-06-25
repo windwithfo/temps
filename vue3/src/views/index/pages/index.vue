@@ -61,7 +61,7 @@ block content
   import { onMounted, reactive } from 'vue';
   import { useStore } from 'vuex';
   import { name } from '../js';
-  import fetch   from 'isomorphic-fetch';
+  import axios   from 'axios';
 
   export default {
     setup() {
@@ -81,9 +81,8 @@ block content
       const userInfo = store.state.user.userInfo;
 
       const getData = async () => {
-        const response = await fetch('/static/mock/temp.json');
-        const ret = await response.json();
-        Object.assign(pageData, ret);
+        const ret = await axios('/static/mock/temp.json');
+        Object.assign(pageData, ret.data);
         sendData.radio = pageData.radioDefaul;
         sendData.checkbox = pageData.checkboxDefaul;
         sendData.select = pageData.selectDefault;

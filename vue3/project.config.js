@@ -2,13 +2,11 @@
  * @file 项目全局配置
  * @author dongkunshan(windwithfo@yeah.net)
  */
+const { resolve } = require('path')
 
 module.exports = {
-  view: 'vue',
-  libVersion: 3,
-  lang: 'js',
+  view: 'vue3',
   ssr: false,
-  dll: ['vue', 'isomorphic-fetch', 'vuex', 'vue-router'],
   lint: {
     autoFix: true,
     root: 'src',
@@ -18,34 +16,21 @@ module.exports = {
   alias: {
     src: 'src'
   },
-  pub: {
-    assetsRir: 'dist',
-    assetsPath: '',
-    sourceMap: false,
-    devtool: 'source-map',
-    gzip: true,
-    gzipExtensions: ['js', 'css'],
-    analyzerReport: false,
-    loaders: [],
-    plugins: []
+  server: {
+    port: 8080,
+    proxy: {
+      // 如果是 /lsbdb 打头，则访问地址如下
+      '/lsbdb': {
+        target: 'https://www.baidu.com',
+        changeOrigin: true,
+        // rewrite: path => path.replace(/^\/lsbdb/, '')
+      },
+    },
   },
-  dev: {
-    subassetsRir: 'static',
-    assetsPath: '/',
-    proxyTable: {},
-    host: '0.0.0.0',
-    port: 8088,
-    autoOpenBrowser: false,
-    errorOverlay: true,
-    notifyOnErrors: true,
-    poll: false,
-    useEslint: true,
-    useStylelint: true,
-    showEslintErrorsInOverlay: false,
-    devtool: 'cheap-module-eval-source-map',
-    cacheBusting: true,
-    cssSourceMap: true,
-    loaders: [],
-    plugins: []
+  input: {
+    index: resolve(__dirname, 'html/index.html'),
+    list: resolve(__dirname, 'html/list.html')
+  },
+  build: {
   }
 }

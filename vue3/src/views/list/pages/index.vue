@@ -5,13 +5,12 @@ block content
     img(src="../img/bg.jpg" alt="img")
     br
     i.icon.iconfont &#xe660;
-    //- el-button 默认按钮
-    button 默认按钮
+    el-button 默认按钮
 </template>
 
 <script>
   import { name } from '../js';
-  import fetch    from 'isomorphic-fetch';
+  import axios    from 'axios';
   import { onMounted } from 'vue';
 
   export default {
@@ -19,9 +18,8 @@ block content
       console.log(name);
       let ret;
       onMounted(async () => {
-        const response = await fetch('/static/mock/errorCode.json');
-        ret = await response.json();
-        console.log(ret);
+        ret = await axios('/static/mock/errorCode.json');
+        console.log(ret.data);
       });
 
       return {

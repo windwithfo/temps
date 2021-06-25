@@ -7,10 +7,10 @@ block content
   export default {};
 </script>
 
-<style lang="less">
+<style lang="scss">
   @import '../../assets/style/common';
   @import '../../assets/style/mixin';
-  @import './css/index';
+  @import './style/index';
 
   #app {
     font-family: 'Avenir', 'Helvetica', 'Arial', sans-serif;

@@ -7,9 +7,9 @@ block content
   export default {};
 </script>
 
-<style lang="less">
-  @import '../../assets/style/common';
-  @import './css/index';
+<style lang="scss">
+  @import '../../assets/style/common.scss';
+  @import './style/index.scss';
 
   #app {
     font-family: 'Avenir', 'Helvetica', 'Arial', sans-serif;
