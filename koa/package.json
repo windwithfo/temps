@@ -1,0 +1,23 @@
+{
+  "name": "koa-temp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "dongkunshan(windwithfo@yeah.net)",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "koa-views": "^7.0.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "nodemon": "^2.0.12"
+  }
+}
