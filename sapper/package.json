@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "svelte-ssr",
+  "description": "svelte ssr app",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",

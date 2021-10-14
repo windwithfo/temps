@@ -6,6 +6,7 @@ const { resolve } = require('path')
 
 module.exports = {
   view: 'svelte',
+  build: 'vite',
   ssr: false,
   lint: {
     autoFix: true,
@@ -19,17 +20,38 @@ module.exports = {
   server: {
     port: 8080,
     proxy: {
-      // 如果是 /lsbdb 打头，则访问地址如下
-      '/lsbdb': {
+      // 如果是 /api 打头，则访问地址如下
+      '/api': {
         target: 'https://www.baidu.com',
         changeOrigin: true,
-        // rewrite: path => path.replace(/^\/lsbdb/, '')
+        rewrite: path => path.replace(/^\/api/, '')
       },
     },
   },
-  input: {
-    index: resolve(__dirname, 'html/index.html')
-  },
-  build: {
+  vite: {
+    copy: [
+      {
+        from: 'project.config.js',
+        to: 'dist/project.config.js'
+      }
+    ],
+    server: {
+      port: 8080,
+      proxy: {
+        // 如果是 /api 打头，则访问地址如下
+        '/api': {
+          target: 'https://www.baidu.com',
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/api/, '')
+        },
+      },
+    },
+    build: {
+      rollupOptions: {
+        input: {
+          index: resolve(__dirname, 'html/index.html'),
+        },
+      }
+    },
   }
 }

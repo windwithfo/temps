@@ -5,6 +5,7 @@ package-lock.json
 dist
 static/dll.*.js
 static/vendor*.json
+yarn.lock
 
 # Logs
 logs
