@@ -46,14 +46,14 @@
 </style>
 <wxs module="m1" lang="babel">
 const getTime = (time) => {
-  let date = getDate(time);
-  let hour = date.getHours();
-  let mins = date.getMinutes();
-  let sec = date.getSeconds();
-  let milli = date.getMilliseconds();
-  return `${hour}:${mins}:${sec}.${milli}`;
+  let date = getDate(time)
+  let hour = date.getHours()
+  let mins = date.getMinutes()
+  let sec = date.getSeconds()
+  let milli = date.getMilliseconds()
+  return `${hour}:${mins}:${sec}.${milli}`
 }
-module.exports.getTime = getTime;
+module.exports.getTime = getTime
 </wxs>
 <template>
   <div class="container">
@@ -140,11 +140,11 @@ module.exports.getTime = getTime;
 </template>
 
 <script>
-  import wepy from '@wepy/core'
-  import eventHub from '../assets/eventHub';
-  import { mapState } from '@wepy/x';
-  import store from '../store';
-  import logMixin from '../mixins/log'
+  import { mapState } from '@wepy/x'
+  import store        from '../store'
+  import wepy         from '@wepy/core'
+  import logMixin     from '../mixins/log'
+  import eventHub     from '../assets/eventHub'
 
   wepy.page({
     store,
@@ -156,11 +156,11 @@ module.exports.getTime = getTime;
       // Page 级别 hook, 只对当前 Page 的 setData 生效。
       'before-setData': function (dirty) {
         if (Math.random() < 0.2) {
-          console.log('setData canceled');
-          return false; // Cancel setData
+          console.log('setData canceled')
+          return false // Cancel setData
         }
-        dirty.time = +new Date();
-        return dirty;
+        dirty.time = +new Date()
+        return dirty
       }
     },
 
@@ -227,16 +227,16 @@ module.exports.getTime = getTime;
     computed: {
       ...mapState([ 'counter' ]),
       testcomputed () {
-        return 'computed - ' + this.mynum;
+        return 'computed - ' + this.mynum
       }
     },
 
     methods: {
       handleViewTap () {
-        console.log('handleVieTap clicked');
+        console.log('handleVieTap clicked')
       },
       tap () {
-        throw new Error('can not go here');
+        throw new Error('can not go here')
       },
       plus () {
         this.mynum++
@@ -249,19 +249,19 @@ module.exports.getTime = getTime;
 
         promise.then(() => {
           console.log('toast done')
-        });
+        })
       },
       mixintap () {
-        console.log('do noting from ' + this.$is);
+        console.log('do noting from ' + this.$is)
       },
       communicate () {
-        let counters = this.$children.filter((com) => com.$is === 'components/counter');
+        let counters = this.$children.filter((com) => com.$is === 'components/counter')
 
         // Get children counter
-        counters[0].num++;
-        counters[1].num--;
+        counters[0].num++
+        counters[1].num--
 
-        eventHub.$emit('app-launch', {a: 1}, {b: 2});
+        eventHub.$emit('app-launch', {a: 1}, {b: 2})
       },
       request () {
         let self = this
@@ -272,35 +272,35 @@ module.exports.getTime = getTime;
             url: 'https://www.madcoder.cn/tests/sleep.php?time=1&t=css&c=' + map[i] + '&i=' + i,
             success: function (d) {
               if (d.statusCode !== 200) {
-                self.netrst += d.statusCode + '.';
+                self.netrst += d.statusCode + '.'
               } else {
-                self.netrst += d.data + '.';
+                self.netrst += d.data + '.'
               }
             }
           })
         }
       },
       counterEmit (num) {
-        console.log(`${this.$is} receive event, the number is: ${num}`);
+        console.log(`${this.$is} receive event, the number is: ${num}`)
       }
     },
 
     created () {
       let self = this
-      self.currentTime = +new Date();
+      self.currentTime = +new Date()
 
-      self.setTimeoutTitle = '标题三秒后会被修改';
+      self.setTimeoutTitle = '标题三秒后会被修改'
       setTimeout(() => {
-        self.setTimeoutTitle = '到三秒了';
-      }, 3000);
+        self.setTimeoutTitle = '到三秒了'
+      }, 3000)
 
       wx.getUserInfo({
         success (res) {
-          self.userInfo = res.userInfo;
+          self.userInfo = res.userInfo
         }
-      });
+      })
     }
-  });
+  })
 </script>
 <config>
 {

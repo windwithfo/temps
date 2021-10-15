@@ -3,16 +3,14 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-import {
-  observer
-} from 'mobx-react'
-import React from 'react'
-import ReactDom from 'react-dom'
 import 'styled-jsx/style'
 import '../../assets/style/common.scss'
+import React        from 'react'
+import ReactDom     from 'react-dom'
+import { observer } from 'mobx-react'
 
 @observer
-class Page extends React.Component {
+class Page extends React.Component<any, any> {
   render() {
     const id = this.props.id
 
@@ -66,4 +64,4 @@ function getUrlParam(name, source = '') {
   return ''
 }
 
-ReactDom.render(<Page id={getUrlParam('id')} />, document.getElementById('root'))
+ReactDom.render(<Page id={getUrlParam('id')} />, document.getElementById('app'))

@@ -1,8 +1,8 @@
 <script lang="ts">
+  import routes   from './router'
   import { link } from 'svelte-spa-router'
-  import active from 'svelte-spa-router/active'
-  import Router from 'svelte-spa-router'
-  import routes from './router'
+  import Router   from 'svelte-spa-router'
+  import active   from 'svelte-spa-router/active'
 </script>
 
 <body>

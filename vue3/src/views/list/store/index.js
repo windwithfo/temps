@@ -4,8 +4,8 @@
  * @author windwithfo(windwithfo@yeah.net)
  */
 
-import { createStore } from 'vuex';
-import user from './user';
+import { createStore } from 'vuex'
+import user from './user'
 
 /** 创建store */
 const store = createStore({
@@ -15,13 +15,13 @@ const store = createStore({
   },
   mutations: {
     setEnv: (state, payload) => {
-      Object.assign(state, payload);
+      Object.assign(state, payload)
     }
   },
   // 子模块
   modules: {
     user
   }
-});
+})
 
-export default store;
+export default store

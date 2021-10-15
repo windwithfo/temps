@@ -8,12 +8,12 @@ const { resolve } = require('path')
 module.exports = {
   view: 'vue3',
   ssr: false,
-  build: 'vite',
+  build: 'webpack',
   lint: {
     autoFix: true,
     root: 'src',
     ext: ['.js', 'ts'],
-    ignore: ['assets']
+    ignore: ['assets'],
   },
   server: {
     port: 8080,
@@ -78,7 +78,7 @@ module.exports = {
           keywords: 'list',
           description: 'list'
         }
-      }
+      },
     },
     subassetsRir: 'static',
     pub: {
@@ -90,7 +90,8 @@ module.exports = {
       gzipExtensions: ['js', 'css'],
       analyzerReport: false,
       loaders: [],
-      plugins: []
+      plugins: [],
+      copy: ['project.config.js'],
     },
     dev: {
       assetsPath: '/',
@@ -103,12 +104,13 @@ module.exports = {
       poll: false,
       useEslint: true,
       useStylelint: true,
+      lintStyle: 'scss',
       showEslintErrorsInOverlay: false,
       devtool: 'cheap-module-source-map',
       cacheBusting: true,
       cssSourceMap: true,
       loaders: [],
-      plugins: []
+      plugins: [],
     }
   },
 }

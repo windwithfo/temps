@@ -6,10 +6,10 @@
   import {
     Vue,
     Component
-  } from 'vue-property-decorator';
+  } from 'vue-property-decorator'
 
   @Component({
-    name: 'index'
+    name: 'index',
   })
   export default class App extends Vue {}
 </script>

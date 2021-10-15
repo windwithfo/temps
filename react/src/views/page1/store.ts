@@ -3,12 +3,12 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-import axios from 'axios';
+import axios from 'axios'
 import {
   action,
   observable,
   runInAction
-} from 'mobx';
+} from 'mobx'
 
 class Page1Store {
   text = 'Hello World!'
@@ -16,27 +16,7 @@ class Page1Store {
 
   @action.bound
   async fetchData() {
-    let ret = {
-      data: {
-        env: ''
-      }
-    }
-    try {
-      ret = await axios('/api/home.json')
-      runInAction(() => {
-        this.msg = ret.data.env;
-      });
-      return ret
-    }
-    catch (error) {
-      console.log(error);
-    }
-    return ret
-  }
-
-  @action.bound
-  async init() {
-    let ret = {
+    let ret: any = {
       data: {
         env: ''
       }
@@ -45,7 +25,27 @@ class Page1Store {
       ret = await axios('/api/home.json')
       runInAction(() => {
         this.msg = ret.data.env
-      });
+      })
+      return ret
+    }
+    catch (error) {
+      console.log(error)
+    }
+    return ret
+  }
+
+  @action.bound
+  async init() {
+    let ret: any = {
+      data: {
+        env: ''
+      }
+    }
+    try {
+      ret = await axios('/api/home.json')
+      runInAction(() => {
+        this.msg = ret.data.env
+      })
       return ret
     }
     catch (error) {

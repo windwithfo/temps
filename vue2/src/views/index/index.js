@@ -11,16 +11,16 @@
 //   CheckboxGroup, Menu, MenuItem, Option, Pagination, Popover, Radio,
 //   RadioGroup, Select, Submenu, Table,
 //   TableColumn, TabPane, Tabs, Tree
-// } from 'element-ui';
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-import Vue from 'vue';
+// } from 'element-ui'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import Vue from 'vue'
 // pages
-import app from './app.vue';
-import router from './router';
-import store from './store';
+import app from './app.vue'
+import router from './router'
+import store from './store'
 
-Vue.use(ElementUI);
+Vue.use(ElementUI)
 
 // const components = [
 //   Select,
@@ -52,4 +52,4 @@ new Vue({
   store,
   router,
   render: (h) => h(app)
-}).$mount('#app');
+}).$mount('#app')

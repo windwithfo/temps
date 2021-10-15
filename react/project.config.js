@@ -6,7 +6,7 @@ const { resolve } = require('path')
 
 module.exports = {
   view: 'react',
-  build: 'vite',
+  build: 'webpack',
   ssr: false,
   lint: {
     autoFix: true,
@@ -60,7 +60,7 @@ module.exports = {
     dll: ['mobx', 'react', 'react-dom', 'mobx-react', 'react-loadable', 'react-router-dom', 'isomorphic-fetch'],
     view: {
       index: {
-        template: 'html.ejs',
+        template: 'temp/html.ejs',
         path: 'view/index/index',
         title: 'index',
         meta: {
@@ -72,7 +72,7 @@ module.exports = {
         }
       },
       page1: {
-        template: 'html.ejs',
+        template: 'temp/html.ejs',
         path: 'view/page1/page1',
         title: 'page1',
         meta: {
@@ -84,7 +84,7 @@ module.exports = {
         }
       },
       page2: {
-        template: 'html.ejs',
+        template: 'temp/html.ejs',
         path: 'view/page2/page2',
         title: 'page2',
         meta: {
@@ -96,6 +96,7 @@ module.exports = {
         }
       }
     },
+    subassetsRir: 'static',
     pub: {
       assetsRir: 'dist',
       assetsPath: '',
@@ -105,10 +106,10 @@ module.exports = {
       gzipExtensions: ['js', 'css'],
       analyzerReport: false,
       loaders: [],
-      plugins: []
+      plugins: [],
+      copy: ['project.config.js'],
     },
     dev: {
-      subassetsRir: 'static',
       assetsPath: '/',
       proxyTable: {},
       host: '0.0.0.0',
@@ -119,6 +120,7 @@ module.exports = {
       poll: false,
       useEslint: true,
       useStylelint: true,
+      lintStyle: 'scss',
       showEslintErrorsInOverlay: false,
       devtool: 'cheap-module-eval-source-map',
       cacheBusting: true,

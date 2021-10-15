@@ -6,9 +6,9 @@
 import {
   createRouter,
   createWebHashHistory
-} from 'vue-router';
+} from 'vue-router'
 // 首页
-import Index from './pages/index.vue';
+import Index from './pages/index.vue'
 
 /** 路由配置 */
 const routes = [
@@ -17,7 +17,7 @@ const routes = [
     name: 'index',
     component: Index
   }
-];
+]
 
 const router = createRouter({
   history: createWebHashHistory(),

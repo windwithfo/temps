@@ -7,7 +7,7 @@
 // It has the same sandbox as a Chrome extension.
 
 // 开发环境关闭安全警告提示
-window.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
+window.ELECTRON_DISABLE_SECURITY_WARNINGS = true
 
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {

@@ -58,63 +58,63 @@ block content
 </template>
 
 <script>
-  import { onMounted, reactive } from 'vue';
-  import { useStore } from 'vuex';
-  import { name } from '../js';
-  import axios   from 'axios';
+  import { onMounted, reactive } from 'vue'
+  import { useStore } from 'vuex'
+  import { name } from '../js'
+  import axios   from 'axios'
 
   export default {
     setup() {
-      const store = useStore();
-      console.log(name);
+      const store = useStore()
+      console.log(name)
       const pageData = reactive({
         list: {
           data: []
         }
-      });
+      })
       const sendData = reactive({
         radio: '',
         checkbox: '',
         select: '',
         tab: ''
-      });
-      const userInfo = store.state.user.userInfo;
+      })
+      const userInfo = store.state.user.userInfo
 
       const getData = async () => {
-        const ret = await axios('/static/mock/temp.json');
-        Object.assign(pageData, ret.data);
-        sendData.radio = pageData.radioDefaul;
-        sendData.checkbox = pageData.checkboxDefaul;
-        sendData.select = pageData.selectDefault;
-        sendData.tab = pageData.tabDefault;
-      };
+        const ret = await axios('/static/mock/temp.json')
+        Object.assign(pageData, ret.data)
+        sendData.radio = pageData.radioDefaul
+        sendData.checkbox = pageData.checkboxDefaul
+        sendData.select = pageData.selectDefault
+        sendData.tab = pageData.tabDefault
+      }
 
       onMounted(async () => {
-        getData();
-      });
+        getData()
+      })
 
       return {
         pageData,
         sendData,
         userInfo
-      };
+      }
     },
 
     methods: {
       getData() {
-        console.log('data');
+        console.log('data')
       },
       handleClick(tab) {
-        console.log(tab.index);
+        console.log(tab.index)
       },
 
       pageChagen(pageNum) {
-        console.log(pageNum);
+        console.log(pageNum)
       },
 
       handleNodeClick(data) {
-        console.log(data.value);
+        console.log(data.value)
       },
     },
-  };
+  }
 </script>

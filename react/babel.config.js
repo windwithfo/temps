@@ -13,7 +13,7 @@ module.exports = {
         safari: '11.1',
       },
       useBuiltIns: 'usage',
-      corejs: 2
+      corejs: 3
     }],
     '@babel/preset-react'
   ],

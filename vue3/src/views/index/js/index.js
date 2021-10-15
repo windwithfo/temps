@@ -3,4 +3,4 @@
  * @author windwithfo(windwithfo@yeah.net)
  */
 
-export const name = 'index';
+export const name = 'index'

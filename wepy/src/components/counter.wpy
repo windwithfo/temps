@@ -25,9 +25,9 @@
   </div>
 </template>
 <script>
-  import wepy from '@wepy/core'
-  import store from '../store';
-  import { mapState, mapActions } from '@wepy/x';
+  import { mapState, mapActions } from '@wepy/x'
+  import store                    from '../store'
+  import wepy                     from '@wepy/core'
 
   wepy.component({
     store,
@@ -63,9 +63,9 @@
       ]),
       plus () {
         this.num = this.num + 1
-        console.log('plus tapped in component');
+        console.log('plus tapped in component')
 
-        this.$emit('index-emit', this.num);
+        this.$emit('index-emit', this.num)
       },
       minus () {
         this.num = this.num - 1

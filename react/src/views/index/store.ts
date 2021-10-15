@@ -6,16 +6,16 @@
 import {
   action,
   configure, makeAutoObservable, observable
-} from 'mobx';
+} from 'mobx'
 
-configure({ enforceActions: true })
+configure({ enforceActions: 'always' })
 
 class AppStore {
   constructor() {
     makeAutoObservable(this)
   }
 
-  text = 'home';
+  text = 'home'
   @observable disabled = false
 
   @action

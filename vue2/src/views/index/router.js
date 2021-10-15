@@ -1,11 +1,11 @@
-import Vue       from 'vue';
-import VueRouter from 'vue-router';
+import Vue       from 'vue'
+import VueRouter from 'vue-router'
 
 // 首页
-const Index = () => import('./pages/index.vue');
+const Index = () => import('./pages/index.vue')
 
 /** 插件注册 */
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 /** 路由配置 */
 const routes = [
@@ -14,16 +14,16 @@ const routes = [
     name: 'index',
     component: Index
   }
-];
+]
 
 const router = new VueRouter({
   mode: 'hash',
   routes
-});
+})
 
 router.beforeEach(async (to, from, next) => {
-  console.log('beforeEach');
-  next();
-});
+  console.log('beforeEach')
+  next()
+})
 
-export default router;
+export default router

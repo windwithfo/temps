@@ -8,18 +8,17 @@
 // import {
 //   Button,
 //   Select
-// } from 'element-ui';
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-import Vue from 'vue';
-import '../../assets/style/font.css';
+// } from 'element-ui'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import Vue from 'vue'
+import '../../assets/style/font.css'
 // pages
-import app from './app.vue';
-import router from './router';
-import store from './store';
+import app from './app.vue'
+import router from './router'
+import store from './store'
 
-
-Vue.use(ElementUI);
+Vue.use(ElementUI)
 
 // const components = [
 //   Button,
@@ -35,4 +34,4 @@ new Vue({
   store,
   router,
   render: (h) => h(app)
-}).$mount('#app');
+}).$mount('#app')

@@ -3,7 +3,7 @@
 .idea
 package-lock.json
 dist
-static/dll.*.js
+static/dll.*
 static/vendor*.json
 
 # Logs

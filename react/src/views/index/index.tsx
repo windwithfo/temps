@@ -3,26 +3,24 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-import { Button } from 'antd';
-import {
-  observer
-} from 'mobx-react';
-import React from 'react';
-import ReactDom from 'react-dom';
-import 'styled-jsx/style';
-import '../../assets/style/common.scss';
-import store from './store';
+import 'styled-jsx/style'
+import '../../assets/style/common.scss'
+import { Button }   from 'antd'
+import React        from 'react'
+import store        from './store'
+import ReactDom     from 'react-dom'
+import { observer } from 'mobx-react'
 
 @observer
-class Page extends React.Component {
+class Page extends React.Component<any, any> {
   render() {
-    const { text, disabled, btnCtl } = this.props.store;
+    const { text, disabled, btnCtl } = this.props.store
     const btnClick = () => {
-      btnCtl(true);
+      btnCtl(true)
       setTimeout(() => {
-        btnCtl();
-      }, 3000);
-    };
+        btnCtl()
+      }, 3000)
+    }
     return (
       <div className="nav">
         <ul>
@@ -54,9 +52,8 @@ class Page extends React.Component {
           `}</style>
         </div>
       </div>
-    );
+    )
   }
 }
 
-ReactDom.render(<Page store={store} />, document.getElementById('root'));
-
+ReactDom.render(<Page store={store} />, document.getElementById('app'))

@@ -3,10 +3,10 @@
  * @author windwithfo(windwithfo@yeah.net)
  */
 
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 // 首页
-import Index from './pages/index.vue';
+import Index from './pages/index.vue'
 
 /** 路由配置 */
 const routes = [
@@ -15,16 +15,16 @@ const routes = [
     name: 'index',
     component: Index
   }
-];
+]
 
 const router = createRouter({
   history: createWebHashHistory('list.html'),
   routes
-});
+})
 
 router.beforeEach(async (to, from, next) => {
-  console.log('beforeEach');
-  next();
-});
+  console.log('beforeEach')
+  next()
+})
 
-export default router;
+export default router

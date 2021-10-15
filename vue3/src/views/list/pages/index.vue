@@ -9,22 +9,22 @@ block content
 </template>
 
 <script>
-  import { name } from '../js';
-  import axios    from 'axios';
-  import { onMounted } from 'vue';
+  import { name } from '../js'
+  import axios    from 'axios'
+  import { onMounted } from 'vue'
 
   export default {
     setup() {
-      console.log(name);
-      let ret;
+      console.log(name)
+      let ret
       onMounted(async () => {
-        ret = await axios('/static/mock/errorCode.json');
-        console.log(ret.data);
-      });
+        ret = await axios('/static/mock/errorCode.json')
+        console.log(ret.data)
+      })
 
       return {
         ret
-      };
+      }
     }
-  };
+  }
 </script>

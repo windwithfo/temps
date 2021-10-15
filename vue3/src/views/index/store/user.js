@@ -15,25 +15,25 @@ const userState = {
   },
   getters: {
     authenticated: (state) => {
-      return state.userInfo.userId != null;
+      return state.userInfo.userId != null
     }
   },
   mutations: {
     // 更新用户state数据
     updateUserState(state, payload) {
-      const data = Object.assign({}, state.userInfo, payload);
-      state.user = data;
+      const data = Object.assign({}, state.userInfo, payload)
+      state.user = data
     }
   },
   actions: {
     // 加载用户信息
     async fetchUserState({ commit }) {
-      const result = {};
+      const result = {}
       if (result.code === 0) {
-        commit('updateUserState', Object.assign({}, result.result));
+        commit('updateUserState', Object.assign({}, result.result))
       }
     }
   }
-};
+}
 
-export default userState;
+export default userState

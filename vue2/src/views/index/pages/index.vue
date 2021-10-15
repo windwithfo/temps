@@ -56,28 +56,28 @@
 </template>
 
 <script lang="ts">
-  import { name } from '../js';
-  import axios   from 'axios';
+  import { name } from '../js'
+  import axios   from 'axios'
 
   import {
     Vue,
     Component
-  } from 'vue-property-decorator';
+  } from 'vue-property-decorator'
 
   import {
     namespace
-  } from 'vuex-class';
+  } from 'vuex-class'
 
-  const userStore = namespace('user');
+  const userStore = namespace('user')
 
   @Component({
     name: 'index'
   })
   export default class Index extends Vue {
-    @userStore.State userInfo;
+    @userStore.State userInfo
 
-    pageData = {
-      list: {}
+    pageData: any = {
+      list: {},
     }
 
     sendData = {
@@ -88,31 +88,31 @@
     }
 
     mounted() {
-      console.log(name);
+      console.log(name)
       axios('/static/mock/temp.json').then((json) => {
         // success callback
-        console.log(json);
-        this.pageData = json.data;
-        this.sendData.radio = this.pageData.radioDefaul;
-        this.sendData.checkbox = this.pageData.checkboxDefaul;
-        this.sendData.select = this.pageData.selectDefault;
-        this.sendData.tab = this.pageData.tabDefault;
+        console.log(json)
+        this.pageData = json.data
+        this.sendData.radio = this.pageData.radioDefaul
+        this.sendData.checkbox = this.pageData.checkboxDefaul
+        this.sendData.select = this.pageData.selectDefault
+        this.sendData.tab = this.pageData.tabDefault
       }, (error) => {
         // error callback
-        console.log(error);
-      });
+        console.log(error)
+      })
     }
 
     handleClick(tab) {
-      console.log(tab.index);
+      console.log(tab.index)
     }
 
     pageChagen(pageNum) {
-      console.log(pageNum);
+      console.log(pageNum)
     }
 
     handleNodeClick(data) {
-      console.log(data.value);
+      console.log(data.value)
     }
   }
 </script>

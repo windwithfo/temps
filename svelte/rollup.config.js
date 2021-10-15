@@ -1,54 +1,55 @@
-import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
-import fs from 'fs';
-import css from 'rollup-plugin-css-only';
-import gzipPlugin from 'rollup-plugin-gzip';
-import livereload from 'rollup-plugin-livereload';
-import svelte from 'rollup-plugin-svelte';
-import { terser } from 'rollup-plugin-terser';
-import sveltePreprocess from 'svelte-preprocess';
 
-const production = !process.env.ROLLUP_WATCH;
+import fs               from 'fs'
+import sveltePreprocess from 'svelte-preprocess'
+import gzipPlugin       from 'rollup-plugin-gzip'
+import { terser }       from 'rollup-plugin-terser'
+import svelte           from 'rollup-plugin-svelte'
+import css              from 'rollup-plugin-css-only'
+import commonjs         from '@rollup/plugin-commonjs'
+import livereload       from 'rollup-plugin-livereload'
+import typescript       from '@rollup/plugin-typescript'
+import resolve          from '@rollup/plugin-node-resolve'
 
-const jsPath = 'public/build/bundle.js'
+const production = !process.env.ROLLUP_WATCH
+
+const jsPath  = 'public/build/bundle.js'
 const cssPath = 'public/build/bundle.css'
 
 if (!production && fs.existsSync(`${jsPath}.gz`)) {
   fs.unlink(`${jsPath}.gz`, function(err){
     if(err){
-      // throw err;
+      // throw err
     }
-    console.log(`文件:${jsPath}.gz删除成功！`);
+    console.log(`文件:${jsPath}.gz删除成功！`)
   })
 
   fs.unlink(`${cssPath}.gz`, function(err){
     if(err){
-      // throw err;
+      // throw err
     }
-    console.log(`文件:${cssPath}.gz删除成功！`);
+    console.log(`文件:${cssPath}.gz删除成功！`)
   })
 }
 
 function serve() {
-  let server;
+  let server
 
   function toExit() {
-    if (server) server.kill(0);
+    if (server) server.kill(0)
   }
 
   return {
     writeBundle() {
-      if (server) return;
+      if (server) return
       server = require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
         stdio: ['ignore', 'inherit', 'inherit'],
         shell: true
-      });
+      })
 
-      process.on('SIGTERM', toExit);
-      process.on('exit', toExit);
+      process.on('SIGTERM', toExit)
+      process.on('exit', toExit)
     }
-  };
+  }
 }
 
 export default {
@@ -102,4 +103,4 @@ export default {
   watch: {
     clearScreen: false
   }
-};
+}

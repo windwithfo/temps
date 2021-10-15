@@ -8,7 +8,7 @@ const { resolve } = require('path')
 module.exports = {
   view: 'vue2',
   ssr: false,
-  build: 'vite',
+  build: 'webpack',
   lint: {
     autoFix: true,
     root: 'src',
@@ -36,11 +36,11 @@ module.exports = {
     server: {
       port: 8080,
       proxy: {
-        // 如果是 /lsbdb 打头，则访问地址如下
-        '/lsbdb': {
+        // 如果是 /api 打头，则访问地址如下
+        '/api': {
           target: 'https://www.baidu.com',
           changeOrigin: true,
-          // rewrite: path => path.replace(/^\/lsbdb/, '')
+          rewrite: path => path.replace(/^\/api/, '')
         },
       },
     },
@@ -90,6 +90,7 @@ module.exports = {
       gzipExtensions: ['js', 'css'],
       loaders: [],
       plugins: [],
+      copy: ['project.config.js'],
     },
     dev: {
       assetsPath: '/',
@@ -102,6 +103,7 @@ module.exports = {
       poll: false,
       useEslint: true,
       useStylelint: true,
+      lintStyle: 'scss',
       showEslintErrorsInOverlay: false,
       devtool: 'cheap-module-source-map',
       loaders: [],

@@ -6,7 +6,7 @@
   import {
     Vue,
     Component
-  } from 'vue-property-decorator';
+  } from 'vue-property-decorator'
 
   @Component({
     name: 'list'

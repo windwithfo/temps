@@ -1,3 +1,8 @@
+/**
+ * @file test import js
+ * @author windwithfo(windwithfo@yeah.net)
+ */
+
 const Koa         = require('koa')
 const { resolve } = require('path')
 const chalk       = require('chalk')

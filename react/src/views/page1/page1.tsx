@@ -3,17 +3,15 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-import {
-  observer
-} from 'mobx-react'
-import React from 'react'
-import ReactDom from 'react-dom'
 import 'styled-jsx/style'
 import '../../assets/style/common.scss'
-import store from './store'
+import React        from 'react'
+import store        from './store'
+import ReactDom     from 'react-dom'
+import { observer } from 'mobx-react'
 
 @observer
-class Page extends React.Component {
+class Page extends React.Component<any, any> {
   render() {
     const { text, msg } = this.props.store
 
@@ -52,4 +50,4 @@ class Page extends React.Component {
   }
 }
 
-ReactDom.render(<Page store={store} />, document.getElementById('root'))
+ReactDom.render(<Page store={store} />, document.getElementById('app'))
