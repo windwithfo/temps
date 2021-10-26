@@ -4,7 +4,7 @@
   "description": "A template of koa2 server use esmodule",
   "main": "server.mjs",
   "module": "server.mjs",
-  "author": "dongkunshan(dongkunshan210816@credithc.com)",
+  "author": "windwithfo(windwithfo@yeah.net)",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server.mjs",

@@ -1,6 +1,6 @@
 /**
  * @file 服务入口文件
- * @author dongkunshan(dongkunshan210816@credithc.com)
+ * @author windwithfo(windwithfo@yeah.net)
  */
 import os               from 'os'
 import Koa              from 'koa'

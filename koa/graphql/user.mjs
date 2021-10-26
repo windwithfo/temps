@@ -1,6 +1,6 @@
 /**
  * @file 路由配置
- * @author dongkunshan(dongkunshan210816@credithc.com)
+ * @author windwithfo(windwithfo@yeah.net)
  */
 
 import controller from '../controller/user.mjs'

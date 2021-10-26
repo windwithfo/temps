@@ -1,6 +1,6 @@
 /**
  * @file /user 路由配置
- * @author dongkunshan(dongkunshan210816@credithc.com)
+ * @author windwithfo(windwithfo@yeah.net)
  */
 
 import Router     from 'koa-router'

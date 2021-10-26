@@ -1,6 +1,6 @@
 /**
  * @file /user 控制器
- * @author dongkunshan(dongkunshan210816@credithc.com)
+ * @author windwithfo(windwithfo@yeah.net)
  */
 
 function getData(arg) {
