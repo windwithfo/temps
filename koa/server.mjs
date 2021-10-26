@@ -84,7 +84,7 @@ startServer(query.typeDefs, query.resolvers)
 //     chalk.cyan(`
 //   *************************************************
 //   *                                               *
-//   *     server is run ${ip.address()} on port ${port}    *
+//   *     server is run ${getIPAdress()} on port ${port}    *
 //   *                                               *
 //   *************************************************
 //     `)
