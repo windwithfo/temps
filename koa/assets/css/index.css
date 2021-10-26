@@ -1,0 +1,22 @@
+.container {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+textarea {
+  width: 300px;
+  height: 400px;
+  overflow: scroll;
+}
+
+.label {
+  width: 300px;
+  text-align: left;
+}

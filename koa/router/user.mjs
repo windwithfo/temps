@@ -1,5 +1,10 @@
-const Router     = require('koa-router')
-const controller = require('../controller/user')
+/**
+ * @file /user 路由配置
+ * @author dongkunshan(dongkunshan210816@credithc.com)
+ */
+
+import Router     from 'koa-router'
+import controller from '../controller/user.mjs'
 
 const router = new Router()
 
@@ -18,4 +23,4 @@ router.get('/page', async(ctx, next) => {
   ctx.body = ret
 })
 
-module.exports = router
+export default router

@@ -11,14 +11,19 @@
     "events": {
       "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
     },
+    "legacyWatch": true,
     "watch": [
-      "server.js",
-      "view/",
-      "router/",
-      "controller/"
+      "nodemon.json",
+      "server.mjs",
+      "router.mjs",
+      "query.mjs",
+      "router",
+      "controller",
+      "graphql"
     ],
     "env": {
-      "NODE_ENV": "development"
+      "NODE_ENV": "development",
+      "port": 3000
     },
-    "ext": "js,json,pug"
+    "ext": "js,json,pug,mjs,gql"
   }

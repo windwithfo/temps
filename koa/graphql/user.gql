@@ -1,0 +1,10 @@
+type User {
+  id: ID,
+  name: String,
+  age: Int,
+  games: [Game]
+}
+
+type Query {
+  user(id: Int): [User]
+}

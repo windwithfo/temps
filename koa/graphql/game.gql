@@ -1,0 +1,9 @@
+type Game {
+  id: ID,
+  name: String,
+  mode: String,
+}
+
+type Query {
+  game(id: Int): [Game],
+}
