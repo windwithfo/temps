@@ -19,8 +19,8 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 720,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
   }})
@@ -28,12 +28,16 @@ function createWindow () {
   // and load the index.html of the app.
   // TODO：use local remote on dev and relative path on production
   // dev模式使用本机域名，prod模式使用相对路径
-  mainWindow.loadFile('index.html')
-  // mainWindow.loadURL(url.format({
-  //   pathname: 'www.baidu.com',
-  //   protocol: 'https:',
-  //   slashes: true
-  // }))
+  // mainWindow.loadFile('index.html')
+  if (process.argv[2] === 'dev') {
+    mainWindow.loadURL(url.format({
+      pathname: 'localhost:8080',
+      protocol: 'http:',
+      slashes: true
+    }))
+  } else {
+    mainWindow.loadFile('output/index.html')
+  }
 
   // Open the DevTools. can from project.config
   mainWindow.webContents.openDevTools()

@@ -3,11 +3,13 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
+const { resolve } = require('path')
+
 module.exports = {
   debug: false,
   devTool: false,
-  view: 'vue2',
-  build: 'webpack',
+  view: 'vue3',
+  build: 'vite',
   lang: 'js',
   ssr: false,
   lint: {
@@ -28,11 +30,16 @@ module.exports = {
     },
   },
   vite: {
+    base: './',
     copy: [
       {
         from: 'project.config.js',
         to: 'dist/project.config.js'
-      }
+      },
+      {
+        from: 'renderer.js',
+        to: 'dist/renderer.js'
+      },
     ],
     server: {
       port: 8080,
@@ -46,10 +53,10 @@ module.exports = {
       },
     },
     build: {
+      outDir: 'output',
       rollupOptions: {
         input: {
-          index: resolve(__dirname, 'html/index.html'),
-          list: resolve(__dirname, 'html/list.html')
+          index: resolve(__dirname, 'index.html'),
         },
       },
     },

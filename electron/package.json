@@ -5,9 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "electron .",
+    "dev": "wc dev",
+    "serve": "electron . dev",
     "build": "electron-builder",
-    "pub": "electron-builder"
+    "pub": "wc pub"
   },
   "keywords": [
     "Electron",
@@ -19,22 +20,22 @@
   "author": "dongkunshan <windwithfo@yeah.net>",
   "license": "MIT",
   "dependencies": {
-    "@babel/polyfill": "7.4.4",
-    "core-js": "3.1.4"
+    "axios": "0.21.1",
+    "core-js": "3.6.5",
+    "element-plus": "1.0.2-beta.39",
+    "vue": "3.0.11",
+    "vue-router": "4.0.6",
+    "vuex": "4.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.5.5",
-    "@babel/core": "7.5.5",
-    "@babel/plugin-proposal-class-properties": "7.5.5",
-    "@babel/plugin-proposal-decorators": "7.4.4",
-    "@babel/preset-env": "7.5.5",
-    "electron": "6.0.1",
-    "electron-builder": "21.2.0",
-    "postcss-flexboxfixer": "0.0.5",
-    "postcss-loader": "3.0.0"
+    "electron": "15.3.0",
+    "electron-builder": "22.13.1",
+    "pug": "^3.0.2",
+    "sass": "^1.43.4"
   },
   "build": {
     "appId": "com.electron.myApp",
+    "productName": "electronApp",
     "win": {
       "target": "nsis",
       "icon": "build/aias.ico"
