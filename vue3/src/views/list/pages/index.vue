@@ -14,6 +14,7 @@ block content
   import { onMounted } from 'vue'
 
   export default {
+    name: 'listPage',
     setup() {
       console.log(name)
       let ret

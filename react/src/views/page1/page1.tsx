@@ -3,7 +3,6 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-import 'styled-jsx/style'
 import '../../assets/style/common.scss'
 import React        from 'react'
 import store        from './store'

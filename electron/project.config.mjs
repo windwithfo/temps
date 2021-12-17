@@ -3,17 +3,20 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-const { resolve } = require('path')
+import { resolve } from 'path'
 
-module.exports = {
+export default {
+  debug: false,
+  devTool: false,
   view: 'vue3',
+  build: 'vite',
+  lang: 'js',
   ssr: false,
-  build: 'webpack',
   lint: {
     autoFix: true,
     root: 'src',
-    ext: ['.js', 'ts'],
-    ignore: ['assets'],
+    ext: ['.js', '.vue'],
+    ignore: ['assets']
   },
   server: {
     port: 8080,
@@ -27,11 +30,17 @@ module.exports = {
     },
   },
   vite: {
+    base: './',
+    publicDir: 'static',
     copy: [
       {
-        from: 'project.config.js',
-        to: 'dist/project.config.js'
-      }
+        from: 'project.config.mjs',
+        to: 'output/project.config.mjs'
+      },
+      {
+        from: 'renderer.js',
+        to: 'output/renderer.js'
+      },
     ],
     server: {
       port: 8080,
@@ -45,12 +54,12 @@ module.exports = {
       },
     },
     build: {
+      outDir: 'output',
       rollupOptions: {
         input: {
-          index: resolve(__dirname, 'html/index.html'),
-          list: resolve(__dirname, 'html/list.html')
+          index: resolve(process.cwd(), 'index.html'),
         },
-      }
+      },
     },
   },
   webpack: {
@@ -78,17 +87,16 @@ module.exports = {
           keywords: 'list',
           description: 'list'
         }
-      },
+      }
     },
     subassetsRir: 'static',
     pub: {
       assetsRir: 'dist',
       assetsPath: '/',
-      sourceMap: false,
       devtool: 'source-map',
+      analyzerReport: false,
       gzip: true,
       gzipExtensions: ['js', 'css'],
-      analyzerReport: false,
       loaders: [],
       plugins: [],
       copy: ['project.config.js'],
@@ -99,19 +107,12 @@ module.exports = {
       host: '0.0.0.0',
       port: 8088,
       autoOpenBrowser: false,
-      errorOverlay: true,
-      notifyOnErrors: true,
-      poll: false,
+      analyzerReport: false,
       useEslint: true,
       useStylelint: true,
-      lintStyle: 'scss',
-      showEslintErrorsInOverlay: false,
       devtool: 'cheap-module-source-map',
-      cacheBusting: true,
-      cssSourceMap: true,
       loaders: [],
       plugins: [],
-    }
+    },
   },
 }
- 

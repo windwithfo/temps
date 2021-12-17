@@ -2,9 +2,9 @@
  * @file 项目全局配置
  * @author dongkunshan(windwithfo@yeah.net)
  */
-const { resolve } = require('path')
+import { resolve } from 'path'
 
-module.exports = {
+export default {
   view: 'svelte',
   build: 'vite',
   ssr: false,
@@ -31,8 +31,8 @@ module.exports = {
   vite: {
     copy: [
       {
-        from: 'project.config.js',
-        to: 'dist/project.config.js'
+        from: 'project.config.mjs',
+        to: 'dist/project.config.mjs'
       }
     ],
     server: {
@@ -49,7 +49,7 @@ module.exports = {
     build: {
       rollupOptions: {
         input: {
-          index: resolve(__dirname, 'html/index.html'),
+          index: resolve(process.cwd(), 'html/index.html'),
         },
       }
     },

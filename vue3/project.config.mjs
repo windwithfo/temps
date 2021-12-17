@@ -3,17 +3,17 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-const { resolve } = require('path')
+import { resolve } from 'path'
 
-module.exports = {
-  view: 'vue2',
+export default {
+  view: 'vue3',
   ssr: false,
-  build: 'webpack',
+  build: 'vite',
   lint: {
     autoFix: true,
     root: 'src',
-    ext: ['.js', '.vue'],
-    ignore: ['assets']
+    ext: ['.js', 'ts'],
+    ignore: ['assets'],
   },
   server: {
     port: 8080,
@@ -27,10 +27,11 @@ module.exports = {
     },
   },
   vite: {
+    publicDir: 'static',
     copy: [
       {
-        from: 'project.config.js',
-        to: 'dist/project.config.js'
+        from: 'project.config.mjs',
+        to: 'dist/project.config.mjs'
       }
     ],
     server: {
@@ -47,10 +48,10 @@ module.exports = {
     build: {
       rollupOptions: {
         input: {
-          index: resolve(__dirname, 'html/index.html'),
-          list: resolve(__dirname, 'html/list.html')
+          index: resolve(process.cwd(), 'html/index.html'),
+          list: resolve(process.cwd(), 'html/list.html')
         },
-      },
+      }
     },
   },
   webpack: {
@@ -78,19 +79,20 @@ module.exports = {
           keywords: 'list',
           description: 'list'
         }
-      }
+      },
     },
     subassetsRir: 'static',
     pub: {
       assetsRir: 'dist',
       assetsPath: '/',
+      sourceMap: false,
       devtool: 'source-map',
-      analyzerReport: false,
       gzip: true,
       gzipExtensions: ['js', 'css'],
+      analyzerReport: false,
       loaders: [],
       plugins: [],
-      copy: ['project.config.js'],
+      copy: ['project.config.mjs'],
     },
     dev: {
       assetsPath: '/',
@@ -98,17 +100,13 @@ module.exports = {
       host: '0.0.0.0',
       port: 8088,
       autoOpenBrowser: false,
-      errorOverlay: true,
-      notifyOnErrors: true,
-      poll: false,
+      analyzerReport: false,
       useEslint: true,
       useStylelint: true,
-      lintStyle: 'scss',
-      showEslintErrorsInOverlay: false,
       devtool: 'cheap-module-source-map',
       loaders: [],
       plugins: [],
-    },
+    }
   },
 }
  

@@ -19,9 +19,9 @@ class AppStore {
   @observable disabled = false
 
   @action
-  btnCtl = (flag = false) => {
-    this.disabled = flag
-  }
+    btnCtl = (flag = false) => {
+      this.disabled = flag
+    }
 }
 
 const store = new AppStore()

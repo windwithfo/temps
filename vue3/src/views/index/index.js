@@ -14,7 +14,7 @@ import {
   ElPagination,
   ElPopover, ElRadio,
   ElRadioGroup, ElSelect,
-  ElSubmenu, ElTable,
+  ElSubMenu, ElTable,
   ElTableColumn, ElTabPane, ElTabs,
   ElTree
 } from 'element-plus'
@@ -33,7 +33,7 @@ const components = [
   ElPagination,
   ElPopover, ElRadio,
   ElRadioGroup, ElSelect,
-  ElSubmenu, ElTable,
+  ElSubMenu, ElTable,
   ElTableColumn, ElTabPane, ElTabs,
   ElTree
 ]

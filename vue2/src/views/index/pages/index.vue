@@ -89,7 +89,7 @@
 
     mounted() {
       console.log(name)
-      axios('/static/mock/temp.json').then((json) => {
+      axios('/mock/temp.json').then((json) => {
         // success callback
         console.log(json)
         this.pageData = json.data

@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "jsx": "preserve",
+    "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -24,10 +24,10 @@
       "es2017"
     ],
     "paths": {
-      "@": ["src"],
-      "component": ["src/components"],
-      "asset": ["src/assets"],
-      "view": ["src/views"]
+      "@/*": ["src/*"],
+      "component/*": ["src/components/*"],
+      "asset/*": ["src/assets/*"],
+      "view/*": ["src/views/*"]
     }
   }
 }

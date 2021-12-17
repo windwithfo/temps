@@ -3,13 +3,13 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-import 'styled-jsx/style'
 import '../../assets/style/common.scss'
 import { Button }   from 'antd'
 import React        from 'react'
 import store        from './store'
 import ReactDom     from 'react-dom'
 import { observer } from 'mobx-react'
+import Text         from 'component/Text'
 
 @observer
 class Page extends React.Component<any, any> {
@@ -41,6 +41,7 @@ class Page extends React.Component<any, any> {
           </li>
         </ul>
         <div className="home">
+          <Text/>
           <p className="title">Hello World!</p>
           <p>By Emiya</p>
           <p>page say: {text}</p>

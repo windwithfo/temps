@@ -2,20 +2,18 @@
  * @file 项目全局配置
  * @author dongkunshan(windwithfo@yeah.net)
  */
-const { resolve } = require('path')
 
-module.exports = {
-  view: 'react',
-  build: 'webpack',
+import { resolve } from 'path'
+
+export default {
+  view: 'vue2',
   ssr: false,
+  build: 'vite',
   lint: {
     autoFix: true,
     root: 'src',
     ext: ['.js', '.vue'],
     ignore: ['assets']
-  },
-  alias: {
-    src: 'src'
   },
   server: {
     port: 8080,
@@ -29,10 +27,11 @@ module.exports = {
     },
   },
   vite: {
+    publicDir: 'static',
     copy: [
       {
-        from: 'project.config.js',
-        to: 'dist/project.config.js'
+        from: 'project.config.mjs',
+        to: 'dist/project.config.mjs'
       }
     ],
     server: {
@@ -49,84 +48,64 @@ module.exports = {
     build: {
       rollupOptions: {
         input: {
-          index: resolve(__dirname, 'html/index.html'),
-          page1: resolve(__dirname, 'html/page1.html'),
-          page2: resolve(__dirname, 'html/page2.html'),
+          index: resolve(process.cwd(), 'html/index.html'),
+          list: resolve(process.cwd(), 'html/list.html')
         },
-      }
+      },
     },
   },
   webpack: {
-    dll: ['mobx', 'react', 'react-dom', 'mobx-react', 'react-loadable', 'react-router-dom', 'isomorphic-fetch'],
+    dll: ['vue', 'vuex', 'vue-router', 'axios'],
     view: {
       index: {
         template: 'temp/html.ejs',
+        show: true,
         path: 'view/index/index',
-        title: 'index',
+        title: 'home',
         meta: {
-          keywords: 'index',
-          description: 'index',
+          keywords: 'home',
+          description: 'home',
           viewport: 'initial-scale=1, maximum-scale=1',
           'format-detection': 'telephone=no',
           'format-detection': 'email=no'
         }
       },
-      page1: {
+      list: {
         template: 'temp/html.ejs',
-        path: 'view/page1/page1',
-        title: 'page1',
+        show: true,
+        path: 'view/list/index',
+        title: 'list',
         meta: {
-          keywords: 'page1',
-          description: 'page1',
-          viewport: 'initial-scale=1, maximum-scale=1',
-          'format-detection': 'telephone=no',
-          'format-detection': 'email=no'
-        }
-      },
-      page2: {
-        template: 'temp/html.ejs',
-        path: 'view/page2/page2',
-        title: 'page2',
-        meta: {
-          keywords: 'page2',
-          description: 'page2',
-          viewport: 'initial-scale=1, maximum-scale=1',
-          'format-detection': 'telephone=no',
-          'format-detection': 'email=no'
+          keywords: 'list',
+          description: 'list'
         }
       }
     },
     subassetsRir: 'static',
     pub: {
       assetsRir: 'dist',
-      assetsPath: '',
-      sourceMap: false,
+      assetsPath: '/',
       devtool: 'source-map',
+      analyzerReport: false,
       gzip: true,
       gzipExtensions: ['js', 'css'],
-      analyzerReport: false,
       loaders: [],
       plugins: [],
-      copy: ['project.config.js'],
+      copy: ['project.config.mjs'],
     },
     dev: {
       assetsPath: '/',
       proxyTable: {},
       host: '0.0.0.0',
       port: 8088,
+      analyzerReport: false,
       autoOpenBrowser: false,
-      errorOverlay: true,
-      notifyOnErrors: true,
-      poll: false,
       useEslint: true,
       useStylelint: true,
-      lintStyle: 'scss',
-      showEslintErrorsInOverlay: false,
-      devtool: 'cheap-module-eval-source-map',
-      cacheBusting: true,
-      cssSourceMap: true,
+      devtool: 'cheap-module-source-map',
       loaders: [],
-      plugins: []
-    }
+      plugins: [],
+    },
   },
 }
+ 

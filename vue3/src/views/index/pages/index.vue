@@ -7,7 +7,7 @@ block content
         el-menu-item(v-if="!item.subNav" :index="item.index" :key="index")
           a.nav-a(target="_blank" :href="item.link") {{ item.title }}
         template(v-else)
-          el-submenu(:index="item.index" :key="index")
+          el-sub-menu(:index="item.index" :key="index")
             template(slot="title") {{ item.title }}
             el-menu-item(v-for="subitem in item.subNav" :index="subitem.index" :key="subitem.index")
               a.subnav-a(target="_blank" :href="subitem.link") {{ subitem.title }}
@@ -64,6 +64,7 @@ block content
   import axios   from 'axios'
 
   export default {
+    name: 'indePage',
     setup() {
       const store = useStore()
       console.log(name)
@@ -81,7 +82,7 @@ block content
       const userInfo = store.state.user.userInfo
 
       const getData = async () => {
-        const ret = await axios('/static/mock/temp.json')
+        const ret = await axios('/mock/temp.json')
         Object.assign(pageData, ret.data)
         sendData.radio = pageData.radioDefaul
         sendData.checkbox = pageData.checkboxDefaul

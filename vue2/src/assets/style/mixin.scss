@@ -1,8 +1,8 @@
 @import './variable';
 
 /* 清除浮动 */
-.ks-clear:after,
-.clear:after {
+.ks-clear::after,
+.clear::after {
   content: '\20';
   display: block;
   height: 0;

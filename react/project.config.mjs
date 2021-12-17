@@ -2,21 +2,20 @@
  * @file 项目全局配置
  * @author dongkunshan(windwithfo@yeah.net)
  */
+import { resolve } from 'path'
 
-const { resolve } = require('path')
-
-module.exports = {
-  debug: false,
-  devTool: false,
-  view: 'vue3',
+export default {
+  view: 'react',
   build: 'vite',
-  lang: 'js',
   ssr: false,
   lint: {
     autoFix: true,
     root: 'src',
     ext: ['.js', '.vue'],
     ignore: ['assets']
+  },
+  alias: {
+    src: 'src'
   },
   server: {
     port: 8080,
@@ -30,16 +29,12 @@ module.exports = {
     },
   },
   vite: {
-    base: './',
+    publicDir: 'static',
     copy: [
       {
-        from: 'project.config.js',
-        to: 'dist/project.config.js'
-      },
-      {
-        from: 'renderer.js',
-        to: 'dist/renderer.js'
-      },
+        from: 'project.config.mjs',
+        to: 'dist/project.config.mjs'
+      }
     ],
     server: {
       port: 8080,
@@ -53,38 +48,52 @@ module.exports = {
       },
     },
     build: {
-      outDir: 'output',
       rollupOptions: {
         input: {
-          index: resolve(__dirname, 'index.html'),
+          index: resolve(process.cwd(), 'html/index.html'),
+          page1: resolve(process.cwd(), 'html/page1.html'),
+          page2: resolve(process.cwd(), 'html/page2.html'),
         },
-      },
+      }
     },
   },
   webpack: {
-    dll: ['vue', 'vuex', 'vue-router', 'axios'],
+    dll: ['mobx', 'react', 'react-dom', 'mobx-react', 'react-loadable', 'react-router-dom', 'isomorphic-fetch'],
     view: {
       index: {
         template: 'temp/html.ejs',
-        show: true,
         path: 'view/index/index',
-        title: 'home',
+        title: 'index',
         meta: {
-          keywords: 'home',
-          description: 'home',
+          keywords: 'index',
+          description: 'index',
           viewport: 'initial-scale=1, maximum-scale=1',
           'format-detection': 'telephone=no',
           'format-detection': 'email=no'
         }
       },
-      list: {
+      page1: {
         template: 'temp/html.ejs',
-        show: true,
-        path: 'view/list/index',
-        title: 'list',
+        path: 'view/page1/page1',
+        title: 'page1',
         meta: {
-          keywords: 'list',
-          description: 'list'
+          keywords: 'page1',
+          description: 'page1',
+          viewport: 'initial-scale=1, maximum-scale=1',
+          'format-detection': 'telephone=no',
+          'format-detection': 'email=no'
+        }
+      },
+      page2: {
+        template: 'temp/html.ejs',
+        path: 'view/page2/page2',
+        title: 'page2',
+        meta: {
+          keywords: 'page2',
+          description: 'page2',
+          viewport: 'initial-scale=1, maximum-scale=1',
+          'format-detection': 'telephone=no',
+          'format-detection': 'email=no'
         }
       }
     },
@@ -92,13 +101,14 @@ module.exports = {
     pub: {
       assetsRir: 'dist',
       assetsPath: '/',
+      sourceMap: false,
       devtool: 'source-map',
-      analyzerReport: false,
       gzip: true,
       gzipExtensions: ['js', 'css'],
+      analyzerReport: false,
       loaders: [],
       plugins: [],
-      copy: ['project.config.js'],
+      copy: ['project.config.mjs'],
     },
     dev: {
       assetsPath: '/',
@@ -106,16 +116,12 @@ module.exports = {
       host: '0.0.0.0',
       port: 8088,
       autoOpenBrowser: false,
-      errorOverlay: true,
-      notifyOnErrors: true,
-      poll: false,
+      analyzerReport: false,
       useEslint: true,
       useStylelint: true,
-      lintStyle: 'scss',
-      showEslintErrorsInOverlay: false,
       devtool: 'cheap-module-source-map',
       loaders: [],
-      plugins: [],
-    },
+      plugins: []
+    }
   },
 }
