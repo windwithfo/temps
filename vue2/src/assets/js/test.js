@@ -5,7 +5,7 @@
 
 const v1 = 11
 
-let v2 = 'v2'
+const v2 = 'v2'
 
 export function t1() {
   console.log(1)

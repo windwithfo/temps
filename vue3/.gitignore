@@ -5,6 +5,7 @@ package-lock.json
 dist
 static/dll.*
 static/vendor*.json
+.pnpm-debug.log
 
 # Logs
 logs

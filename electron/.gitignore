@@ -10,6 +10,7 @@ dist
 output
 static/dll.*
 static/vendor*.json
+.pnpm-debug.log
 
 # Logs
 logs
