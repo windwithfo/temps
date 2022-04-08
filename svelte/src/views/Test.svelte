@@ -44,7 +44,7 @@
   {:then number}
 	  <p>The number is {number}</p>
   {:catch error}
-	  <p style="color: red">{error.message}</p>
+	  <p style="color: red;">{error.message}</p>
   {/await}
 </div>
 
@@ -78,25 +78,28 @@
     user.loggedIn = !user.loggedIn
   }
   let cats = [
-		{ id: 'J---aiyznGQ', name: 'Keyboard Cat' },
-		{ id: 'z_AbfPXTKms', name: 'Maru' },
-		{ id: 'OUtn3pvWmpg', name: 'Henri The Existential Cat' }
+    { id: 'J---aiyznGQ',
+      name: 'Keyboard Cat' },
+    { id: 'z_AbfPXTKms',
+      name: 'Maru' },
+    { id: 'OUtn3pvWmpg',
+      name: 'Henri The Existential Cat' }
   ]
   async function getRandomNumber() {
-		const res = await fetch(`/mock/random-number.json`)
-		const text = await res.json()
+    const res = await fetch(`/mock/random-number.json`)
+    const text = await res.json()
 
-		if (res.ok) {
-			return text.num
-		} else {
-			throw new Error(text)
-		}
+    if (res.ok) {
+      return text.num
+    }
+    throw new Error(text)
+  
   }
 
   let promise = getRandomNumber()
   function handleClick2() {
-		promise = getRandomNumber()
-	}
+    promise = getRandomNumber()
+}
 </script>
 
 <style>

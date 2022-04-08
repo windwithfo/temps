@@ -29,6 +29,7 @@ export default {
     },
   },
   vite: {
+    customElement: false,
     copy: [
       {
         from: 'project.config.mjs',
@@ -49,7 +50,7 @@ export default {
     build: {
       rollupOptions: {
         input: {
-          index: resolve(process.cwd(), 'html/index.html'),
+          index: resolve(process.cwd(), 'index.html'),
         },
       }
     },

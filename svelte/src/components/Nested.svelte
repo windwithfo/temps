@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let text = {foo: {bar: 'defalut'}}
+  export let text = { foo: { bar: 'defalut' } }
   text.foo.bar = 'dks'
 </script>
 

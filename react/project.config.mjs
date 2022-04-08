@@ -50,9 +50,9 @@ export default {
     build: {
       rollupOptions: {
         input: {
-          index: resolve(process.cwd(), 'html/index.html'),
-          page1: resolve(process.cwd(), 'html/page1.html'),
-          page2: resolve(process.cwd(), 'html/page2.html'),
+          index: resolve(process.cwd(), 'index.html'),
+          page1: resolve(process.cwd(), 'page1.html'),
+          page2: resolve(process.cwd(), 'page2.html'),
         },
       }
     },

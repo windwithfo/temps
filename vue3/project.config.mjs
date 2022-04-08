@@ -48,8 +48,8 @@ export default {
     build: {
       rollupOptions: {
         input: {
-          index: resolve(process.cwd(), 'html/index.html'),
-          list: resolve(process.cwd(), 'html/list.html')
+          index: resolve(process.cwd(), 'index.html'),
+          list: resolve(process.cwd(), 'list.html')
         },
       }
     },
