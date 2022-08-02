@@ -15,7 +15,7 @@ const userState = {
   },
   getters: {
     authenticated: (state) => {
-      return state.user.userId != null
+      return state.user.userId !== null
     }
   },
   mutations: {
