@@ -3,7 +3,8 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-import { resolve } from 'path'
+import { resolve }         from 'path'
+import { createVuePlugin } from 'vite-plugin-vue2'
 
 export default {
   view: 'vue2',
@@ -33,6 +34,9 @@ export default {
         from: 'project.config.mjs',
         to: 'dist/project.config.mjs'
       }
+    ],
+    plugins: [
+      createVuePlugin()
     ],
     server: {
       port: 8080,
