@@ -9,7 +9,7 @@ import { createVuePlugin } from 'vite-plugin-vue2'
 export default {
   view: 'vue2',
   ssr: false,
-  build: 'vite',
+  build: 'webpack',
   lint: {
     autoFix: true,
     root: 'src',
