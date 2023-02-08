@@ -22,7 +22,7 @@
   export default class List extends Vue {
     mounted() {
       console.log(name)
-      axios('/static/mock/errorCode.json').then((json) => {
+      axios('/mock/errorCode.json').then((json) => {
         // success callback
         console.log(json.data)
       }, (error) => {
