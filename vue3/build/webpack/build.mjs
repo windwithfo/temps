@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * @file 运行项目命令集合
+ * @file 发布项目命令集合
  * @author dongkunshan(windwithfo@yeah.net)
  */
 import path            from 'path'
@@ -8,33 +8,32 @@ import Chalk           from 'chalk'
 import dotenv          from 'dotenv'
 import webpack         from 'webpack'
 import fs              from 'fs-extra'
-import { getEnv, Log } from './utils.mjs'
-import DevServer       from 'webpack-dev-server'
-import webpackConfig   from './config/webpack.dev.mjs'
+import { Log, getEnv } from './utils.mjs'
+import webpackConfig   from './config/webpack.prod.mjs'
 import Compression     from 'compression-webpack-plugin'
 import ProgressBar     from 'progress-bar-webpack-plugin'
 import proCfg          from './config/project.config.mjs'
 import FriendlyErrors  from 'friendly-errors-webpack-plugin'
 
 // get node env args
-const env = getEnv('env', 'development')
+const env = getEnv('env', 'production')
 
 // create dll when it's missing
-if (!fs.pathExistsSync(path.join(process.cwd(), 'public', 'vendor-manifest.dev.json'))) {
+if (!fs.pathExistsSync(path.join(process.cwd(), 'public', 'vendor-manifest.json'))) {
   await dll()
 }
 
-// run webpack-dev-server
-run()
+// buid project
+pub()
 
 /**
- * 启动开发服务
+ * 开始构建
  */
-async function run() {
-  Log('run server')
-  // 读取env文件
+function pub() {
+  Log('build project')
   if (env) {
-    const result = dotenv.config({ path: path.resolve(`.env.${env}`) })
+    // 读取env文件
+    const result = dotenv.config({ path: path.resolve(process.cwd(), `.env.${env}`) })
     if (result.error) {
       Log(`read ${result.error.path} faild`, 'blue')
     }
@@ -51,10 +50,26 @@ async function run() {
       webpackConfig.plugins.push(new webpack.DefinePlugin(_env))
     }
   }
-  const compiler = webpack(webpackConfig)
-  // set params
-  const server = new DevServer(webpackConfig.devServer, compiler)
-  await server.start()
+  webpack(webpackConfig, (err, stats) => {
+    if (err || stats.hasErrors()) {
+      // Handle errors here
+      Log(err, 'red')
+      Log(stats, 'red')
+      Log('build error', 'red')
+      return
+    }
+    Log(stats.toString({
+      // Add console colors
+      colors: true,
+      children: false,
+      chunks: false,
+      modules: false
+    }), 'green')
+    // Done processing
+    Log('******************************************************************', 'green')
+    Log('                       build successfully', 'green')
+    Log('******************************************************************', 'green')
+  })
 }
 
 /**
@@ -62,9 +77,8 @@ async function run() {
  */
 function dll() {
   Log('init dll ...')
-  
   const config = {
-    mode: 'development',
+    mode: 'production',
     entry: {
       vendor: proCfg.dll
     },
@@ -77,7 +91,7 @@ function dll() {
     },
     output: {
       path: path.join(process.cwd(), 'public'),
-      filename: 'dll.[name].dev.js',
+      filename: 'dll.[name].js',
       library: '[name]'
     },
     plugins: [
@@ -89,7 +103,7 @@ function dll() {
         clear: false
       }),
       new webpack.DllPlugin({
-        path: path.join(process.cwd(), 'public', '[name]-manifest.dev.json'),
+        path: path.join(process.cwd(), 'public', '[name]-manifest.json'),
         name: '[name]'
       }),
       new Compression({

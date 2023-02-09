@@ -2,6 +2,7 @@
  * @file 项目全局配置
  * @author dongkunshan(windwithfo@yeah.net)
  */
+
 export default {
   server: {
     port: 8080,

@@ -55,6 +55,7 @@ block content
         template(v-if="index == (pageData.bread.length - 1)") {{ item.text }}
         template(v-else)
           a(:href="item.url") {{ item.text }}
+    van-button(type="primary") 主要按钮
 </template>
 
 <script>

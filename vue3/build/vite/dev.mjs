@@ -2,38 +2,31 @@
  * @file 运行项目命令集合
  * @author dongkunshan(windwithfo@yeah.net)
  */
-import path                from 'path'
-import { merge, Log }      from './utils.mjs'
-import { createVuePlugin } from 'vite-plugin-vue2'
-import eslintPlugin        from '@nabla/vite-plugin-eslint'
-import config              from './config/project.config.mjs'
-import StylelintPlugin     from 'vite-plugin-stylelint-serve'
+import path            from 'path'
+import { merge, Log }  from './utils.mjs'
+import vue             from '@vitejs/plugin-vue'
+import AutoImport      from 'unplugin-auto-import/vite'
+import eslintPlugin    from '@nabla/vite-plugin-eslint'
+import StylelintPlugin from 'vite-plugin-stylelint-serve'
+import config          from './config/project.config.mjs'
+import Components      from 'unplugin-vue-components/vite'
 import {
   defineConfig,
   createServer
 } from 'vite'
 import {
-  createStyleImportPlugin,
-  ElementPlusResolve
-} from 'vite-plugin-style-import'
+  ElementPlusResolver,
+  VantResolver
+} from 'unplugin-vue-components/resolvers'
 
 const viteConfig = defineConfig({
   plugins: [
-    createVuePlugin(),
-    createStyleImportPlugin({
-      resolves: [ElementPlusResolve()],
-      libs: [{
-        libraryName: 'element-ui',
-        esModule: true,
-        ensureStyleFile: true,
-        resolveStyle: (name) => {
-          name = name.slice(3)
-          return `element-ui/packages/theme-chalk/src/${name}.scss`
-        },
-        resolveComponent: (name) => {
-          return `element-ui/lib/${name}`
-        },
-      }]
+    vue(),
+    AutoImport({
+      resolvers: [ElementPlusResolver(), VantResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver(), VantResolver()],
     }),
     eslintPlugin({
       eslintOptions: {
@@ -57,8 +50,9 @@ const viteConfig = defineConfig({
       'api': path.resolve(process.cwd(), 'src/api'),
       'common': path.resolve(process.cwd(), 'src/common'),
     },
-  },
+  }
 })
+
 
 // 合并配置文件
 const buildConfig = merge(viteConfig, config)

@@ -2,8 +2,7 @@
  * @file babel配置
  * @author dongkunshan(windwithfo@yeah.net)
  */
-
- module.exports = {
+module.exports = {
   presets: [
     ['@babel/env', {
       targets: {

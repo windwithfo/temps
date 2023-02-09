@@ -2,38 +2,35 @@
  * @file 运行项目命令集合
  * @author dongkunshan(windwithfo@yeah.net)
  */
-import path                from 'path'
-import fs                  from 'fs-extra'
-import { merge, Log }      from './utils.mjs'
-import { createVuePlugin } from 'vite-plugin-vue2'
-import viteCompression     from 'vite-plugin-compression'
-import config              from './config/project.config.mjs'
+import path            from 'path'
+import fs              from 'fs-extra'
+import { merge, Log }  from './utils.mjs'
+import vue             from '@vitejs/plugin-vue'
+import viteCompression from 'vite-plugin-compression'
+import AutoImport      from 'unplugin-auto-import/vite'
+import config          from './config/project.config.mjs'
+import Components      from 'unplugin-vue-components/vite'
 import {
   defineConfig,
   build
 } from 'vite'
 import {
-  createStyleImportPlugin,
-  ElementPlusResolve
-} from 'vite-plugin-style-import'
+  ElementPlusResolver,
+  VantResolver,
+} from 'unplugin-vue-components/resolvers'
 
 const viteConfig = defineConfig({
+  css: {
+    charset: false,
+    preprocessorOptions: { scss: { charset: false } }
+  },
   plugins: [
-    createVuePlugin(),
-    createStyleImportPlugin({
-      resolves: [ElementPlusResolve()],
-      libs: [{
-        libraryName: 'element-ui',
-        esModule: true,
-        ensureStyleFile: true,
-        resolveStyle: (name) => {
-          name = name.slice(3)
-          return `element-ui/packages/theme-chalk/src/${name}.scss`
-        },
-        resolveComponent: (name) => {
-          return `element-plus/lib/${name}`
-        },
-      }]
+    vue(),
+    AutoImport({
+      resolvers: [ElementPlusResolver(), VantResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver(), VantResolver()],
     }),
     viteCompression({
       verbose: true,
@@ -41,7 +38,7 @@ const viteConfig = defineConfig({
       threshold: 10240,
       algorithm: 'gzip',
       ext: '.gz'
-    })
+    }),
   ],
   resolve: {
     alias: {
