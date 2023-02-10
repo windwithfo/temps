@@ -2,14 +2,15 @@
  * @file 详情页
  * @author dongkunshan(windwithfo@yeah.net)
  */
-
-import '../../assets/style/common.scss'
-import { Button }   from 'antd'
-import React        from 'react'
-import store        from './store'
-import ReactDom     from 'react-dom'
-import { observer } from 'mobx-react'
-import Text         from 'component/Text'
+import 'antd-mobile/es/global'
+import '../assets/style/common.scss'
+import { Button }            from 'antd'
+import React                 from 'react'
+import store                 from './store'
+import { observer }          from 'mobx-react'
+import { Button as Button2 } from 'antd-mobile'
+import Text                  from 'component/Text'
+import { createRoot }        from 'react-dom/client'
 
 @observer
 class Page extends React.Component<any, any> {
@@ -46,6 +47,7 @@ class Page extends React.Component<any, any> {
           <p>By Emiya</p>
           <p>page say: {text}</p>
           <Button type="primary" onClick={btnClick} disabled={disabled}>点我禁用3秒</Button>
+          <Button2 block color='primary' size='large'>Block Button</Button2>
           <style>{`
             .title {
               color: #0ff;
@@ -57,4 +59,6 @@ class Page extends React.Component<any, any> {
   }
 }
 
-ReactDom.render(<Page store={store} />, document.getElementById('app'))
+const container = document.getElementById('app')
+const root = createRoot(container)
+root.render(<Page store={store} />)

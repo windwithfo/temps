@@ -2,11 +2,11 @@
  * @file 第二页
  * @author dongkunshan(windwithfo@yeah.net)
  */
-
+import 'antd-mobile/es/global'
 import '../../assets/style/common.scss'
-import React        from 'react'
-import ReactDom     from 'react-dom'
-import { observer } from 'mobx-react'
+import React          from 'react'
+import { observer }   from 'mobx-react'
+import { createRoot } from 'react-dom/client'
 
 @observer
 class Page extends React.Component<any, any> {
@@ -57,10 +57,12 @@ function getUrlParam(name, source = '') {
     _source = window.location.search.substr(1)
   }
   const r = _source.match(reg)
-  if (r != null) {
+  if (r !== null) {
     return decodeURIComponent(r[2])
   }
   return ''
 }
 
-ReactDom.render(<Page id={getUrlParam('id')} />, document.getElementById('app'))
+const container = document.getElementById('app')
+const root = createRoot(container)
+root.render(<Page id={getUrlParam('id')} />)

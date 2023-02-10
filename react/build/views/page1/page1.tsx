@@ -2,12 +2,12 @@
  * @file 第一页
  * @author dongkunshan(windwithfo@yeah.net)
  */
-
+import 'antd-mobile/es/global'
 import '../../assets/style/common.scss'
-import React        from 'react'
-import store        from './store'
-import ReactDom     from 'react-dom'
-import { observer } from 'mobx-react'
+import React          from 'react'
+import store          from './store'
+import { observer }   from 'mobx-react'
+import { createRoot } from 'react-dom/client'
 
 @observer
 class Page extends React.Component<any, any> {
@@ -49,4 +49,6 @@ class Page extends React.Component<any, any> {
   }
 }
 
-ReactDom.render(<Page store={store} />, document.getElementById('app'))
+const container = document.getElementById('app')
+const root = createRoot(container)
+root.render(<Page store={store} />)

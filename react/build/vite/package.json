@@ -1,0 +1,49 @@
+{
+  "name": "@windwithfo/react",
+  "version": "1.0.0",
+  "description": "A react template project",
+  "main": "index.js",
+  "author": "dongkunshan <windwithfo@yeah.net>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node script/dev.mjs",
+    "dev:test": "node script/dev.mjs -e test",
+    "build": "node script/build.mjs",
+    "build:test": "node script/build.mjs --env=test"
+  },
+  "dependencies": {
+    "antd": "5.2.0",
+    "antd-mobile": "5.28.0",
+    "axios": "1.3.2",
+    "mobx": "6.8.0",
+    "mobx-react": "7.6.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-loadable": "5.5.0",
+    "react-router-dom": "6.8.1",
+    "styled-jsx": "5.1.2"
+  },
+  "devDependencies": {
+    "@nabla/vite-plugin-eslint": "1.5.0",
+    "@types/react": "17.0.11",
+    "@types/styled-jsx": "2.2.8",
+    "@typescript-eslint/eslint-plugin": "5.51.0",
+    "@typescript-eslint/parser": "5.51.0",
+    "@vitejs/plugin-react": "3.1.0",
+    "autoprefixer": "10.2.6",
+    "chalk": "5.2.0",
+    "eslint-plugin-html": "7.1.0",
+    "eslint-plugin-react": "7.32.2",
+    "less": "4.1.1",
+    "postcss": "8.3.5",
+    "postcss-flexboxfixer": "0.0.5",
+    "postcss-scss": "4.0.6",
+    "sass": "1.35.1",
+    "stylelint-config-html": "1.1.0",
+    "typescript": "4.3.4",
+    "vite": "4.1.1",
+    "vite-plugin-compression": "0.5.1",
+    "vite-plugin-imp": "2.3.1",
+    "vite-plugin-stylelint-serve": "1.0.4"
+  }
+}

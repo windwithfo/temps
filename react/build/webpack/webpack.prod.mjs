@@ -2,11 +2,11 @@
  * @file 部署配置
  * @author dongkunshan(windwithfo@yeah.net)
  */
+
 import path                     from 'path'
 import Chalk                    from 'chalk'
 import webpack                  from 'webpack'
 import fs                       from 'fs-extra'
-import { VueLoaderPlugin }      from 'vue-loader'
 import { merge }                from 'webpack-merge'
 import baseConfig               from './webpack.base.mjs'
 import Html                     from 'html-webpack-plugin'
@@ -22,8 +22,8 @@ import CSSAssets                from 'css-minimizer-webpack-plugin'
 import FriendlyErrors           from 'friendly-errors-webpack-plugin'
 
 let manifest
-try {
-  manifest = fs.readJSONSync(process.cwd() + `/public/vendor-manifest.json`)
+try {  
+   manifest = fs.readJSONSync(process.cwd() + `/public/vendor-manifest.json`)
 } catch (_) {
   console.log('no dll json')
 }
@@ -33,7 +33,6 @@ const entry = config.view || [{ page: 'index', path: 'view/index' }]
 const webpackConfig = merge(baseConfig, {
   mode: 'production',
   optimization: {
-    minimize: true,
     minimizer: [
       new TerserJs({
         parallel: true,
@@ -65,12 +64,19 @@ const webpackConfig = merge(baseConfig, {
     rules: [
       {
         test: /\.css$/,
-        use: [Extract.loader, 'css-loader', 'postcss-loader'],
+        use: [Extract.loader, 'css-loader', 'postcss-loader']
       },
       {
         test: /\.less$/,
-        use: [Extract.loader, 'css-loader', 'postcss-loader', 'less-loader'],
-      }
+        use: [Extract.loader, 'css-loader', 'postcss-loader', {
+          loader: 'less-loader',
+          options: {
+            lessOptions: {
+              javascriptEnabled: true
+            }
+          }
+        }]
+      },
     ]
   },
   stats: {
@@ -84,7 +90,12 @@ const webpackConfig = merge(baseConfig, {
     new webpack.LoaderOptionsPlugin({ options: {} }),
     new CleanWebpackPlugin(),
     new FriendlyErrors(),
-    new VueLoaderPlugin(),
+    new ProgressBar({
+      complete: Chalk.green('█'),
+      incomplete: Chalk.white('█'),
+      format: '  :bar ' + Chalk.green.bold(':percent') + ' :msg',
+      clear: false
+    }),
     new CompressionWebpackPlugin({
       test: new RegExp(
         '\\.(js|css)$'
@@ -92,12 +103,6 @@ const webpackConfig = merge(baseConfig, {
       threshold: 10240,
       minRatio: 0.8,
       exclude: /\.?dll\./i
-    }),
-    new ProgressBar({
-      complete: Chalk.green('█'),
-      incomplete: Chalk.white('█'),
-      format: '  :bar ' + Chalk.green.bold(':percent') + ' :msg',
-      clear: false
     }),
     new Extract({
       filename: 'css/app.[name].css',
@@ -120,10 +125,6 @@ entry.forEach((page) => {
       templateParameters: {
         title: page.title || '',
         vendor: config.assetsPath + 'dll.vendor.js',
-        globalBarHide: page.globalBarHide || false,
-        checkoutLogin: page.checkoutLogin || false,
-        prodHide: page.prodHide || false,
-        redirect: page.redirect || false,
       }
     })
   )
