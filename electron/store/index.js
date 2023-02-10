@@ -4,7 +4,7 @@
  * @author windwithfo(windwithfo@yeah.net)
  */
 import { createStore } from 'vuex'
-import user from './user'
+import user            from './user'
 
 /** 创建store */
 const store = createStore({

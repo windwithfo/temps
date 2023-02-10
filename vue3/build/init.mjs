@@ -1,7 +1,7 @@
 /**
  * 根据不同条件初始化项目
  * 
- * @example node build/init.mjs --build=webpack --single=true
+ * @example node build/init.mjs --build=vite --single=true
  */
 import fs              from 'fs-extra'
 import { getEnv, Log } from './utils.mjs'

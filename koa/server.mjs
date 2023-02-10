@@ -50,10 +50,10 @@ async function startServer(typeDefs, resolvers) {
   console.log(
     chalk.cyan(`
   *************************************************
-  *                                               *
-  *     server is run ${getIPAdress()} on port ${port}    *
-  *     graphqlPath is ${server.graphqlPath}                   *
-  *                                               *
+                                                
+      server is run ${getIPAdress()} on port ${port}
+      graphqlPath is ${server.graphqlPath}
+                                                
   *************************************************
     `)
   )
