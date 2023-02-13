@@ -64,7 +64,7 @@ await build({
 if (config.copy && config.copy.length) {
   config.copy.forEach((item) => {
     fs.copySync(path.resolve(process.cwd(), item.from), path.resolve(process.cwd(), item.to))
-    Log(`copy from${item.from} to ${item.to}`, 'green')
+    Log(`copy from ${item.from} to ${item.to}`, 'green')
   })
 }
 
