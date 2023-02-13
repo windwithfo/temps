@@ -1,10 +1,10 @@
-<div class="main">
- <p>The path {params.wild} is not found</p>
-</div>
-
 <script lang="ts">
   export let params
 </script>
+
+<div class="main">
+  <p>The path {params.wild} is not found</p>
+</div>
 
 <style>
   .main {
