@@ -3,6 +3,8 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 export default {
+  view: 'react',
+  build: 'webpack',
   server: {
     port: 8080,
     proxy: {
@@ -16,7 +18,7 @@ export default {
   },
   dll: ['mobx', 'react', 'react-dom', 'mobx-react', 'react-loadable', 'react-router-dom', 'axios'],
   analyzerReport: false,
-  copy: ['script/config/project.config.mjs'],
+  copy: ['project.config.mjs'],
   assetsRir: 'dist',
   assetsPath: '/',
   view: [{

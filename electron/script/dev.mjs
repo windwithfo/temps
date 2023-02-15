@@ -5,10 +5,10 @@
 import path            from 'path'
 import { merge, Log }  from './utils.mjs'
 import vue             from '@vitejs/plugin-vue'
+import config          from '../project.config.mjs'
 import AutoImport      from 'unplugin-auto-import/vite'
 import eslintPlugin    from '@nabla/vite-plugin-eslint'
 import StylelintPlugin from 'vite-plugin-stylelint-serve'
-import config          from './config/project.config.mjs'
 import Components      from 'unplugin-vue-components/vite'
 import {
   defineConfig,

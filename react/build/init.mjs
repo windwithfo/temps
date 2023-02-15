@@ -31,12 +31,12 @@ if (config.build === 'webpack') {
   fs.copy('build/webpack/babel.config.js', 'babel.config.js')
   // 拷贝单页文件
   if (config.single === 'true') {
-    fs.copy('build/webpack/project.single.mjs', 'script/config/project.config.mjs')
+    fs.copy('build/webpack/project.single.mjs', 'project.config.mjs')
     fs.copy('build/views/index.tsx', 'src/views/index.tsx')
     fs.copy('build/views/store.ts', 'src/views/store.ts')
   } else {
     // 拷贝多页文件
-    fs.copy('build/webpack/project.multi.mjs', 'script/config/project.config.mjs')
+    fs.copy('build/webpack/project.multi.mjs', 'project.config.mjs')
     fs.copy('build/views/index', 'src/views/index')
     fs.copy('build/views/page1', 'src/views/page1')
     fs.copy('build/views/page2', 'src/views/page2')
@@ -50,13 +50,13 @@ if (config.build === 'webpack') {
   
   // 拷贝单页文件
   if (config.single === 'true') {
-    fs.copy('build/vite/project.single.mjs', 'script/config/project.config.mjs')
+    fs.copy('build/vite/project.single.mjs', 'project.config.mjs')
     fs.copy('build/views/index.tsx', 'src/views/index.tsx')
     fs.copy('build/views/store.ts', 'src/views/store.ts')
     fs.copy('build/vite/index.single.html', 'index.html')
   } else {
     // 拷贝多页文件
-    fs.copy('build/vite/project.multi.mjs', 'script/config/project.config.mjs')
+    fs.copy('build/vite/project.multi.mjs', 'project.config.mjs')
     fs.copy('build/views/index', 'src/views/index')
     fs.copy('build/views/page1', 'src/views/page1')
     fs.copy('build/views/page2', 'src/views/page2')

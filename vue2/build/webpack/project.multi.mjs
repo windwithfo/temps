@@ -3,6 +3,8 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 export default {
+  view: 'vue2',
+  build: 'webpack',
   server: {
     port: 8080,
     proxy: {
@@ -16,7 +18,7 @@ export default {
   },
   dll: ['vue', 'vuex', 'vue-router', 'axios'],
   analyzerReport: false,
-  copy: ['script/config/project.config.mjs'],
+  copy: ['project.config.mjs'],
   assetsRir: 'dist',
   assetsPath: '/',
   view: [{

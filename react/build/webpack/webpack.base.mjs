@@ -3,7 +3,7 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 import path   from 'path'
-import config from './project.config.mjs'
+import config from '../../project.config.mjs'
 
 const entry = config.view || [{ page: 'index', path: 'view/index' }]
 const entrys = {}

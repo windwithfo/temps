@@ -5,6 +5,7 @@
 import { resolve } from 'path'
 
 export default {
+  view: 'electron',
   server: {
      port: 8080,
      proxy: {
@@ -17,7 +18,7 @@ export default {
      },
   },
   copy: [{
-    from: 'script/config/project.config.mjs',
+    from: 'project.config.mjs',
     to: 'output/project.config.mjs'
   }, {
     from: 'renderer.js',

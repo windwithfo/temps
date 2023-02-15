@@ -6,9 +6,9 @@ import path            from 'path'
 import fs              from 'fs-extra'
 import { merge, Log }  from './utils.mjs'
 import vue             from '@vitejs/plugin-vue'
+import config          from '../project.config.mjs'
 import viteCompression from 'vite-plugin-compression'
 import AutoImport      from 'unplugin-auto-import/vite'
-import config          from './config/project.config.mjs'
 import Components      from 'unplugin-vue-components/vite'
 import {
   defineConfig,

@@ -2,11 +2,8 @@
  * @file 项目全局配置
  * @author dongkunshan(windwithfo@yeah.net)
  */
-import { resolve } from 'path'
-
 export default {
-  view: 'vue2',
-  build: 'vite',
+  view: 'sveltekit',
   server: {
      port: 8080,
      proxy: {
@@ -17,19 +14,6 @@ export default {
          rewrite: path => path.replace(/^\/api/, '')
        },
      },
-  },
-  copy: [{
-      from: 'project.config.mjs',
-      to: 'dist/project.config.mjs'
-    }
-  ],
-  build: {
-    rollupOptions: {
-      input: {
-        index: resolve(process.cwd(), 'index.html'),
-        list: resolve(process.cwd(), 'list.html')
-      },
-    }
   }
 } 
  

@@ -6,8 +6,8 @@ import path                from 'path'
 import fs                  from 'fs-extra'
 import { merge, Log }      from './utils.mjs'
 import { createVuePlugin } from 'vite-plugin-vue2'
+import config              from '../project.config.mjs'
 import viteCompression     from 'vite-plugin-compression'
-import config              from './config/project.config.mjs'
 import {
   defineConfig,
   build

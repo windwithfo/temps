@@ -5,8 +5,8 @@
 import path                from 'path'
 import { merge, Log }      from './utils.mjs'
 import { createVuePlugin } from 'vite-plugin-vue2'
+import config              from '../project.config.mjs'
 import eslintPlugin        from '@nabla/vite-plugin-eslint'
-import config              from './config/project.config.mjs'
 import StylelintPlugin     from 'vite-plugin-stylelint-serve'
 import {
   defineConfig,

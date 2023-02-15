@@ -5,6 +5,7 @@
 import { resolve } from 'path'
 
 export default {
+  view: 'svelte',
   server: {
      port: 8080,
      proxy: {
@@ -17,7 +18,7 @@ export default {
      },
   },
   copy: [{
-      from: 'script/config/project.config.mjs',
+      from: 'project.config.mjs',
       to: 'dist/project.config.mjs'
     }
   ],

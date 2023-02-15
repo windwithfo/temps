@@ -6,9 +6,9 @@ import path             from 'path'
 import { merge, Log }   from './utils.mjs'
 import vitePluginImp    from 'vite-plugin-imp'
 import react            from '@vitejs/plugin-react'
+import config           from '../project.config.mjs'
 import eslintPlugin     from '@nabla/vite-plugin-eslint'
 import StylelintPlugin  from 'vite-plugin-stylelint-serve'
-import config           from './config/project.config.mjs'
 import {
   defineConfig,
   createServer

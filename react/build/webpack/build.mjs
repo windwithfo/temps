@@ -9,10 +9,10 @@ import dotenv          from 'dotenv'
 import webpack         from 'webpack'
 import fs              from 'fs-extra'
 import { Log, getEnv } from './utils.mjs'
+import proCfg          from '../project.config.mjs'
 import webpackConfig   from './config/webpack.prod.mjs'
 import Compression     from 'compression-webpack-plugin'
 import ProgressBar     from 'progress-bar-webpack-plugin'
-import proCfg          from './config/project.config.mjs'
 import FriendlyErrors  from 'friendly-errors-webpack-plugin'
 
 // get node env args

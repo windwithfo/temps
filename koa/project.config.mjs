@@ -3,8 +3,7 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 export default {
-  view: 'vue3',
-  build: 'webpack',
+  view: 'koa',
   server: {
     port: 8080,
     proxy: {
@@ -15,11 +14,6 @@ export default {
         rewrite: path => path.replace(/^\/api/, '')
       },
     },
-  },
-  dll: ['vue', 'vuex', 'vue-router', 'axios'],
-  analyzerReport: false,
-  copy: ['project.config.mjs'],
-  assetsRir: 'dist',
-  assetsPath: '/',
-}
+ },
+} 
  

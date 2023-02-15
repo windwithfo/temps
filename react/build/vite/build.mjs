@@ -7,8 +7,8 @@ import fs               from 'fs-extra'
 import { merge, Log }   from './utils.mjs'
 import vitePluginImp    from 'vite-plugin-imp'
 import react            from '@vitejs/plugin-react'
+import config           from '../project.config.mjs'
 import viteCompression  from 'vite-plugin-compression'
-import config           from './config/project.config.mjs'
 import {
   defineConfig,
   build
