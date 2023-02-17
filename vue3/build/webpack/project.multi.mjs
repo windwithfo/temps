@@ -6,6 +6,7 @@
 export default {
   view: 'vue3',
   build: 'webpack',
+  single: false,
   server: {
     port: 8080,
     proxy: {

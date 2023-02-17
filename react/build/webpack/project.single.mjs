@@ -5,6 +5,7 @@
 export default {
   view: 'react',
   build: 'webpack',
+  single: true,
   server: {
     port: 8080,
     proxy: {

@@ -7,6 +7,7 @@ import { resolve } from 'path'
 export default {
   view: 'react',
   build: 'vite',
+  single: false,
   server: {
      port: 8080,
      proxy: {
