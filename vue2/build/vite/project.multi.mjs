@@ -6,7 +6,7 @@ import { resolve } from 'path'
 
 export default {
   view: 'vue2',
-  build: 'vite',
+  buildTool: 'vite',
   single: false,
   server: {
      port: 8080,

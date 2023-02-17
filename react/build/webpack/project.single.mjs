@@ -4,7 +4,7 @@
  */
 export default {
   view: 'react',
-  build: 'webpack',
+  buildTool: 'webpack',
   single: true,
   server: {
     port: 8080,

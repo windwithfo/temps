@@ -4,7 +4,7 @@
  */
 export default {
   view: 'vue2',
-  build: 'webpack',
+  buildTool: 'webpack',
   single: true,
   server: {
     port: 8080,
