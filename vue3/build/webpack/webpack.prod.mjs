@@ -34,7 +34,7 @@ try {
   console.log('no dll json')
 }
 
-const entry = config.view || [{ page: 'index', path: 'view/index' }]
+const entry = config.views || [{ page: 'index', path: 'view/index' }]
 
 const webpackConfig = merge(baseConfig, {
   mode: 'production',

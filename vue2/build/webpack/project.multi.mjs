@@ -22,7 +22,7 @@ export default {
   copy: ['project.config.mjs'],
   assetsRir: 'dist',
   assetsPath: '/',
-  view: [{
+  views: [{
     page: 'index',
     template: 'script/config/html.ejs',
     show: true,

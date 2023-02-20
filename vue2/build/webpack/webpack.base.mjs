@@ -5,7 +5,7 @@
 import path   from 'path'
 import config from '../../project.config.mjs'
 
-const entry = config.view || [{ page: 'index', path: 'view/index' }]
+const entry = config.views || [{ page: 'index', path: 'view/index' }]
 const entrys = {}
 entry.forEach((item) => {
   entrys[item.page] = item.path
