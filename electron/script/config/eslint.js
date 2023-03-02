@@ -155,6 +155,8 @@ module.exports = {
     // 字符串拼接风格
     'operator-linebreak': [2, 'before'],
     // 缩进风格
-    'vue/script-indent': [2, 2, { baseIndent: 1, switchCase: 1 }]
+    'vue/script-indent': [2, 2, { baseIndent: 1, switchCase: 1 }],
+    // 组件驼峰命名
+    'vue/multi-word-component-names': 'off',
   }
 }

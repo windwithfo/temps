@@ -33,11 +33,11 @@ const viteConfig = defineConfig({
         fix: true,
         overrideConfigFile: path.resolve('script/config/eslint.js')
       },
-      shouldLint: (path) => path.match(/\/src\/[^?]*\.(vue|m?[jt]sx?)$/)
+      shouldLint: (path) => path.match(/\/pages\/[^?]*\.(vue|m?[jt]sx?)$/)
     }),
     StylelintPlugin({
       fix: true,
-      include: ['src/**/*.css', 'src/**/*.less', 'src/**/*.sass', 'src/**/*.styl', 'src/**/*.scss', 'src/**/*.vue'],
+      include: ['style/**/*.css', 'style/**/*.less', 'style/**/*.sass', 'style/**/*.styl', 'style/**/*.scss', 'pages/**/*.vue'],
       configFile: path.resolve('script/config/style.js')
     }),
   ],
