@@ -7,7 +7,7 @@ import Koa              from 'koa'
 import http             from 'http'
 import { resolve }      from 'path'
 import chalk            from 'chalk'
-import body             from 'koa-body'
+import { koaBody }      from 'koa-body'
 import json             from 'koa-json'
 import views            from 'koa-views'
 import fileStatic       from 'koa-static'
@@ -23,7 +23,7 @@ const app = new Koa()
 const render = views(resolve('./view'), { autoRender: false, extension: 'pug' })
 
 app.use(fileStatic('assets'))
-app.use(body())
+app.use(koaBody())
 app.use(render)
 app.use(router.routes())
 app.use(router.allowedMethods())

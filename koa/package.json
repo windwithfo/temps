@@ -11,21 +11,21 @@
     "pm2": "pm2 start pm2.json"
   },
   "dependencies": {
-    "apollo-server-core": "3.10.0",
-    "apollo-server-koa": "3.10.0",
-    "graphql": "16.5.0",
-    "koa": "2.13.4",
-    "koa-body": "5.0.0",
+    "apollo-server-core": "3.12.0",
+    "apollo-server-koa": "3.12.0",
+    "graphql": "16.7.1",
+    "koa": "2.14.2",
+    "koa-body": "6.0.1",
     "koa-json": "2.0.2",
     "koa-router": "12.0.0",
     "koa-static": "5.0.0",
-    "koa-views": "8.0.0",
+    "koa-views": "8.1.0",
     "pug": "3.0.2"
   },
   "devDependencies": {
-    "@graphql-tools/graphql-file-loader": "7.5.0",
-    "@graphql-tools/load": "7.7.1",
-    "chalk": "5.0.1",
-    "nodemon": "2.0.19"
+    "@graphql-tools/graphql-file-loader": "8.0.0",
+    "@graphql-tools/load": "8.0.0",
+    "chalk": "5.3.0",
+    "nodemon": "3.0.1"
   }
 }
