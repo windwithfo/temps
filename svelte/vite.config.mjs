@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import path             from 'path'
 import { VitePWA }      from 'vite-plugin-pwa'
+import { compression }  from 'vite-plugin-compression2'
 import eslintPlugin     from '@nabla/vite-plugin-eslint'
 import StylelintPlugin  from 'vite-plugin-stylelint-serve'
 import { svelte }       from '@sveltejs/vite-plugin-svelte'
@@ -18,6 +19,9 @@ export default defineConfig({
       devOptions: {
         enabled: false
       },
+    }),
+    compression({
+      threshold: 50 * 1024,
     }),
     eslintPlugin({
       eslintOptions: {
