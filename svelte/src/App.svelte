@@ -5,12 +5,12 @@
   import active   from 'svelte-spa-router/active'
 </script>
 
-<body>
+<main>
   <a href="/index" use:link use:active>index</a>
   <a href="/test" use:link use:active>test</a>
   <a href="/test2" use:link use:active>test2</a>
   <Router {routes} />
-</body>
+</main>
 
 <style>
   :global(a.active) {
