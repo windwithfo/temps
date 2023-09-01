@@ -5,7 +5,7 @@
 import path    from 'path'
 import fs      from 'fs-extra'
 import { Log } from './utils.mjs'
-import config  from './config/project.config.mjs'
+import config  from '../project.config.mjs'
 
 if (config.copy && config.copy.length) {
   config.copy.forEach((item) => {
