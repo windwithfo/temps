@@ -1,6 +1,8 @@
 /node_modules/
 /public/build/
 /dist/
+/dev-dist/
 yarn.lock
 .DS_Store
 .pnpm-debug.log
+.eslintcache

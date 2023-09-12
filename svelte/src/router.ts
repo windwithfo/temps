@@ -1,6 +1,7 @@
-import Index from './views/Index.svelte'
+import Index    from './views/Index.svelte'
+import { wrap } from 'svelte-spa-router/wrap'
 import NotFound from './views/NotFound.svelte'
-import Test from './views/Test.svelte'
+// import Test from './views/Test.svelte'
 
 const routes = {
   // Exact path
@@ -10,7 +11,9 @@ const routes = {
   '/index': Index,
 
   // Wildcard parameter
-  '/test': Test,
+  '/test': wrap({
+    asyncComponent: () => import('./views/Test.svelte'),
+  }),
 
   // Catch-all
   // This is optional, but if present it must be the last

@@ -21,6 +21,7 @@
     "typescript": "5.1.6",
     "vite": "4.4.2",
     "vite-plugin-compression2": "0.10.4",
+    "vite-plugin-prefetch-module": "1.0.5",
     "vite-plugin-pwa": "0.16.4",
     "vite-plugin-stylelint-serve": "1.0.4"
   },
@@ -28,5 +29,8 @@
     "svelte": "4.0.5",
     "svelte-check": "3.4.5",
     "svelte-spa-router": "3.3.0"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
   }
 }
