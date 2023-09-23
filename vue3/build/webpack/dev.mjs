@@ -69,6 +69,9 @@ function dll() {
       vendor: proCfg.dll
     },
     resolve: {
+      alias: {
+        vue$: 'vue/dist/vue.runtime.esm-browser.js',
+      },
       modules: [
         'node_modules',
         process.cwd() + '/node_modules'
