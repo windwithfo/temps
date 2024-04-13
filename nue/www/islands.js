@@ -19,7 +19,9 @@ export const lib = [
   tagName: 'dialog',
   tmpl: '<dialog> <h2>Select theme</h2> <section class="theme-options"> <label :for="0" :style="1" class="theme"> <input name="theme" type="radio" $checked="2" @change="3"> <h4>:4:</h4> </label> </section> </dialog>',
   Impl: class { 
-    change(el, e) {
+  checkedIndex = 0
+    change(el, e, i) {
+      this.checkedIndex = i
       document.body.className = el.class || el.name.toLowerCase()
       themes.close()
     }
@@ -27,8 +29,8 @@ export const lib = [
   fns: [
     _ => ['el', _.themes, 'i'],
     _ => ['background-color: #',_.el.color],
-    _ => !_.i,
-    (_,e) => { _.change(_.el, e) },
+    _ => _.i === _.checkedIndex,
+    (_,e) => { _.change(_.el, e, _.i) },
     _ => [_.el.name]
   ]
 }]
