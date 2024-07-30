@@ -40,7 +40,7 @@ function createWindow () {
   }
 
   // Open the DevTools. can from project.config
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

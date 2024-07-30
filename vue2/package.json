@@ -4,8 +4,14 @@
   "description": "A Vue2 project",
   "author": "dongkunshan <windwithfo@yeah.net>",
   "license": "MIT",
+  "scripts": {
+    "vite-spa": "node build/init.mjs --build=vite --single=true",
+    "vite-mpa": "node build/init.mjs --build=vite --single=false",
+    "webpack-spa": "node build/init.mjs --build=webpack --single=true",
+    "webpack-mpa": "node build/init.mjs --build=webpack --single=false"
+  },
   "devDependencies": {
     "chalk": "5.3.0",
-    "fs-extra": "11.1.1"
+    "fs-extra": "11.2.0"
   }
 }

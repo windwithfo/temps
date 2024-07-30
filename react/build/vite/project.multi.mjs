@@ -28,8 +28,7 @@ export default {
     rollupOptions: {
       input: {
         index: resolve(process.cwd(), 'index.html'),
-        page1: resolve(process.cwd(), 'page1.html'),
-        page2: resolve(process.cwd(), 'page2.html'),
+        list: resolve(process.cwd(), 'list.html'),
       },
     }
   }

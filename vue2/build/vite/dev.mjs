@@ -3,11 +3,15 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 import path                from 'path'
-import { merge, Log }      from './utils.mjs'
 import { createVuePlugin } from 'vite-plugin-vue2'
 import config              from '../project.config.mjs'
+import StylelintPlugin     from 'vite-plugin-stylelint'
 import eslintPlugin        from '@nabla/vite-plugin-eslint'
-import StylelintPlugin     from 'vite-plugin-stylelint-serve'
+import {
+  merge,
+  Log,
+  getEnv
+} from './utils.mjs'
 import {
   defineConfig,
   createServer
@@ -17,7 +21,11 @@ import {
   ElementPlusResolve
 } from 'vite-plugin-style-import'
 
+// get node env args
+const env = getEnv('env', 'development')
+
 const viteConfig = defineConfig({
+  mode: env,
   plugins: [
     createVuePlugin(),
     createStyleImportPlugin({
@@ -38,7 +46,7 @@ const viteConfig = defineConfig({
     eslintPlugin({
       eslintOptions: {
         fix: true,
-        overrideConfigFile: path.resolve('script/config/eslint.js')
+        overrideConfigFile: path.resolve('script/config/eslint.mjs')
       },
       shouldLint: (path) => path.match(/\/src\/[^?]*\.(vue|m?[jt]sx?)$/)
     }),

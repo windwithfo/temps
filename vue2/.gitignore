@@ -7,6 +7,8 @@ static/dll.*
 static/vendor*.json
 yarn.lock
 .pnpm-debug.log
+pnpm-lock.yaml
+.stylelintcache
 
 # Logs
 logs

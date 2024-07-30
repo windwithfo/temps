@@ -3,7 +3,7 @@
  * @author dongkunshan(dongkunshan210816@credithc.com)
  */
 
-import { MongoClient } from '../../deps.ts'
+import { MongoClient } from 'mongo'
 
 const client = new MongoClient()
  

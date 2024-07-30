@@ -3,8 +3,8 @@
  * @author dongkunshan(dongkunshan210816@credithc.com)
  */
 
+import { Bson } from 'mongo'
 import { db }   from './dbHelper.ts'
-import { Bson } from '../../deps.ts'
 
 // Defining schema interface
 interface UserSchema {

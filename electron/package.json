@@ -4,11 +4,13 @@
   "description": "A template of Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "electron-forge start",
     "dev": "node script/dev.mjs",
     "serve": "electron . dev",
     "release": "electron-builder",
-    "build": "node script/build.mjs"
+    "build": "node script/build.mjs",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "keywords": [
     "Electron",
@@ -20,40 +22,39 @@
   "author": "dongkunshan <windwithfo@yeah.net>",
   "license": "MIT",
   "dependencies": {
-    "axios": "1.4.0",
-    "core-js": "3.31.1",
-    "element-plus": "2.3.7",
-    "vant": "4.6.2",
-    "vue": "3.3.4",
-    "vue-router": "4.2.4",
+    "axios": "1.7.2",
+    "element-plus": "2.7.7",
+    "vue": "3.4.34",
+    "vue-router": "4.4.0",
     "vuex": "4.1.0"
   },
   "devDependencies": {
-    "@nabla/vite-plugin-eslint": "1.5.0",
-    "@typescript-eslint/eslint-plugin": "6.0.0",
-    "@typescript-eslint/parser": "6.0.0",
-    "@vitejs/plugin-vue": "4.2.3",
-    "autoprefixer": "10.4.14",
+    "@electron-forge/cli": "7.4.0",
+    "@electron-forge/maker-dmg": "7.4.0",
+    "@nabla/vite-plugin-eslint": "2.0.4",
+    "@typescript-eslint/eslint-plugin": "7.17.0",
+    "@typescript-eslint/parser": "7.17.0",
+    "@vitejs/plugin-vue": "5.1.0",
+    "autoprefixer": "10.4.19",
     "babel-plugin-component": "1.1.1",
     "chalk": "5.3.0",
     "consola": "3.2.3",
-    "electron": "25.2.0",
-    "electron-builder": "24.4.0",
-    "eslint-plugin-vue": "9.15.1",
-    "postcss": "8.4.25",
+    "electron": "31.3.0",
+    "electron-builder": "24.13.3",
+    "eslint-plugin-vue": "9.27.0",
+    "postcss": "8.4.40",
     "postcss-flexboxfixer": "0.0.5",
-    "postcss-scss": "4.0.6",
-    "pug": "3.0.2",
-    "sass": "1.63.6",
+    "postcss-scss": "4.0.9",
+    "pug": "3.0.3",
+    "sass": "1.77.8",
     "stylelint-config-html": "1.1.0",
-    "typescript": "5.1.6",
-    "unplugin-auto-import": "0.16.6",
-    "unplugin-vue-components": "0.25.1",
-    "vite": "4.4.2",
+    "typescript": "5.5.4",
+    "unplugin-auto-import": "0.18.2",
+    "unplugin-vue-components": "0.27.3",
+    "vite": "5.3.5",
     "vite-plugin-compression": "0.5.1",
     "vite-plugin-style-import": "2.0.0",
-    "vite-plugin-stylelint-serve": "1.0.4",
-    "vite-plugin-vue2": "2.0.3",
+    "vite-plugin-stylelint": "5.3.1",
     "vue-class-component": "7.2.6",
     "vue-property-decorator": "9.1.2",
     "vuex-class": "0.3.2"
@@ -64,6 +65,34 @@
     "win": {
       "target": "nsis",
       "icon": "build/aias.ico"
+    },
+    "mac": {
+      "category": "public.app-category.business",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "icon": "build/icon.icns",
+      "type": "distribution"
+    }
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "name": "electronApp",
+        "osxSign": {},
+        "appCategoryType": "public.app-category.business"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {}
+        }
+      ]
     }
   },
   "browserslist": [

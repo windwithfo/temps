@@ -31,8 +31,8 @@ const webpackConfig = merge(baseConfig, {
   mode: 'development',
   output: {
     path: path.join(process.cwd(), config.assetsRir),
-    filename: 'js/[name].[hash].js',
-    chunkFilename: 'js/[id].[hash].js',
+    filename: 'js/[name].[fullhash].js',
+    chunkFilename: 'js/[id].[fullhash].js',
     publicPath: config.assetsPath
   },
   module: {
@@ -120,7 +120,8 @@ const webpackConfig = merge(baseConfig, {
       extensions: ['js', 'ts', 'jsx', 'tsx'],
       files: [path.resolve(process.cwd(), 'src')],
       fix: true,
-      overrideConfigFile: path.resolve('script/config/eslint.js'),
+      configType: 'flat',
+      overrideConfigFile: path.resolve('script/config/eslint.mjs'),
     }),
     ...(manifest ? [new webpack.DllReferencePlugin({
       manifest

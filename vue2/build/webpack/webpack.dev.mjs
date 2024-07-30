@@ -114,7 +114,8 @@ const webpackConfig = merge(baseConfig, {
       extensions: ['js', 'ts', 'vue'],
       files: [path.resolve(process.cwd(), 'src')],
       fix: true,
-      overrideConfigFile: path.resolve('script/config/eslint.js'),
+      configType: 'flat',
+      overrideConfigFile: path.resolve('script/config/eslint.mjs'),
     }),
     ...(manifest ? [new webpack.DllReferencePlugin({
       manifest

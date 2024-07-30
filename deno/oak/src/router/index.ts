@@ -3,10 +3,11 @@
  * @author dongkunshan(dongkunshan210816@credithc.com)
  */
 
-import { userRouter }             from './user.ts'
-import { sysRouter }              from './system.ts'
-import { Router, ReactDOMServer } from '../../deps.ts'
-import { App }                    from '../page/index.tsx'
+import { Router }     from 'oak'
+import { userRouter } from './user.ts'
+import { sysRouter }  from './system.ts'
+import ReactDOMServer from 'react-dom-server'
+import { App }        from '../page/index.tsx'
 
 const router = new Router()
   .get('/view/(.*)', (ctx) => {

@@ -6,6 +6,8 @@ dist
 static/dll.*
 static/vendor*.json
 .pnpm-debug.log
+pnpm-lock.yaml
+.stylelintcache
 
 # Logs
 logs

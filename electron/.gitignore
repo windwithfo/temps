@@ -11,6 +11,7 @@ output
 static/dll.*
 static/vendor*.json
 .pnpm-debug.log
+pnpm-lock.yaml
 
 # Logs
 logs

@@ -4,10 +4,14 @@
  */
 import path                from 'path'
 import fs                  from 'fs-extra'
-import { merge, Log }      from './utils.mjs'
 import { createVuePlugin } from 'vite-plugin-vue2'
 import config              from '../project.config.mjs'
 import viteCompression     from 'vite-plugin-compression'
+import {
+  merge,
+  Log,
+  getEnv
+} from './utils.mjs'
 import {
   defineConfig,
   build
@@ -17,7 +21,11 @@ import {
   ElementPlusResolve
 } from 'vite-plugin-style-import'
 
+// get node env args
+const env = getEnv('env', 'production')
+
 const viteConfig = defineConfig({
+  mode: env,
   plugins: [
     createVuePlugin(),
     createStyleImportPlugin({

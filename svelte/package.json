@@ -8,27 +8,27 @@
     "validate": "svelte-check"
   },
   "devDependencies": {
-    "@nabla/vite-plugin-eslint": "1.5.0",
-    "@sveltejs/vite-plugin-svelte": "2.4.2",
-    "@tsconfig/svelte": "5.0.0",
-    "@typescript-eslint/eslint-plugin": "6.0.0",
-    "@typescript-eslint/parser": "6.0.0",
-    "eslint": "8.44.0",
+    "@nabla/vite-plugin-eslint": "2.0.4",
+    "@sveltejs/vite-plugin-svelte": "3.1.1",
+    "@tsconfig/svelte": "5.0.4",
+    "@typescript-eslint/eslint-plugin": "7.16.1",
+    "@typescript-eslint/parser": "7.16.1",
+    "eslint": "9.7.0",
     "eslint-plugin-svelte3": "4.0.0",
-    "fs-extra": "11.1.1",
+    "fs-extra": "11.2.0",
     "stylelint-config-html": "1.1.0",
-    "tslib": "2.6.0",
-    "typescript": "5.1.6",
-    "vite": "4.4.2",
-    "vite-plugin-compression2": "0.10.4",
+    "tslib": "2.6.3",
+    "typescript": "5.5.3",
+    "vite": "5.3.4",
+    "vite-plugin-compression2": "1.1.2",
     "vite-plugin-prefetch-module": "1.0.5",
-    "vite-plugin-pwa": "0.16.4",
-    "vite-plugin-stylelint-serve": "1.0.4"
+    "vite-plugin-pwa": "0.20.0",
+    "vite-plugin-stylelint": "5.3.1"
   },
   "dependencies": {
-    "svelte": "4.0.5",
-    "svelte-check": "3.4.5",
-    "svelte-spa-router": "3.3.0"
+    "svelte": "4.2.18",
+    "svelte-check": "3.8.4",
+    "svelte-spa-router": "4.0.1"
   },
   "engines": {
     "node": ">= 16.0.0"

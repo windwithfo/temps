@@ -3,9 +3,10 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-import Page1            from './page1.tsx'
-import Page2            from './page2.tsx'
-import { Route, React } from '../../deps.ts'
+import React     from 'react'
+import Page1     from './page1.tsx'
+import Page2     from './page2.tsx'
+import { Route } from 'react-router'
 
 function getRoutes() {
   return (

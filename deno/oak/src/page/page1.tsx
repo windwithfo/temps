@@ -3,7 +3,7 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
-import { React } from '../../deps.ts'
+import React from 'react'
 
 const Page1 = () => {
   return (

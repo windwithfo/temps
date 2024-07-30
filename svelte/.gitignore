@@ -5,4 +5,6 @@
 yarn.lock
 .DS_Store
 .pnpm-debug.log
+pnpm-lock.yaml
 .eslintcache
+.stylelintcache

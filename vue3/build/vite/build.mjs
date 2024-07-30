@@ -4,12 +4,16 @@
  */
 import path            from 'path'
 import fs              from 'fs-extra'
-import { merge, Log }  from './utils.mjs'
 import vue             from '@vitejs/plugin-vue'
 import config          from '../project.config.mjs'
 import viteCompression from 'vite-plugin-compression'
 import AutoImport      from 'unplugin-auto-import/vite'
 import Components      from 'unplugin-vue-components/vite'
+import {
+  merge,
+  Log,
+  getEnv
+} from './utils.mjs'
 import {
   defineConfig,
   build
@@ -19,7 +23,11 @@ import {
   VantResolver,
 } from 'unplugin-vue-components/resolvers'
 
+// get node env args
+const env = getEnv('env', 'production')
+
 const viteConfig = defineConfig({
+  mode: env,
   css: {
     charset: false,
     preprocessorOptions: { scss: { charset: false } }

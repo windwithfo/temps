@@ -14,7 +14,7 @@ const config = {
 }
 Log('start build')
 // 拷贝通用文件
-fs.copy('build/eslint.js', 'script/config/eslint.js')
+fs.copy('build/eslint.mjs', 'script/config/eslint.mjs')
 fs.copy('build/style.js', 'script/config/style.js')
 fs.copy('build/utils.mjs', 'script/utils.mjs')
 

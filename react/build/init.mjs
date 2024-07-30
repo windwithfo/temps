@@ -14,7 +14,7 @@ const config = {
 }
 Log('start build')
 // 拷贝通用文件
-fs.copy('build/eslint.js', 'script/config/eslint.js')
+fs.copy('build/eslint.mjs', 'script/config/eslint.mjs')
 fs.copy('build/style.js', 'script/config/style.js')
 fs.copy('build/utils.mjs', 'script/utils.mjs')
 
@@ -33,14 +33,16 @@ if (config.build === 'webpack') {
   // 拷贝单页文件
   if (config.single === 'true') {
     fs.copy('build/webpack/project.single.mjs', 'project.config.mjs')
-    fs.copy('build/views/index.tsx', 'src/views/index.tsx')
-    fs.copy('build/views/store.ts', 'src/views/store.ts')
+    fs.copy('build/views/index', 'src/views/', (_) => {
+      fs.copy('build/views/index.single.tsx', 'src/views/index.tsx')
+    })
   } else {
     // 拷贝多页文件
     fs.copy('build/webpack/project.multi.mjs', 'project.config.mjs')
-    fs.copy('build/views/index', 'src/views/index')
-    fs.copy('build/views/page1', 'src/views/page1')
-    fs.copy('build/views/page2', 'src/views/page2')
+    fs.copy('build/views/index', 'src/views/index', (_) => {
+      fs.copy('build/views/index.multi.tsx', 'src/views/index/index.tsx')
+    })
+    fs.copy('build/views/list', 'src/views/list')
   }
 } else {
   // 拷贝package.json
@@ -52,18 +54,19 @@ if (config.build === 'webpack') {
   // 拷贝单页文件
   if (config.single === 'true') {
     fs.copy('build/vite/project.single.mjs', 'project.config.mjs')
-    fs.copy('build/views/index.tsx', 'src/views/index.tsx')
-    fs.copy('build/views/store.ts', 'src/views/store.ts')
+    fs.copy('build/views/index', 'src/views/', (_) => {
+      fs.copy('build/views/index.single.tsx', 'src/views/index.tsx')
+    })
     fs.copy('build/vite/index.single.html', 'index.html')
   } else {
     // 拷贝多页文件
     fs.copy('build/vite/project.multi.mjs', 'project.config.mjs')
-    fs.copy('build/views/index', 'src/views/index')
-    fs.copy('build/views/page1', 'src/views/page1')
-    fs.copy('build/views/page2', 'src/views/page2')
+    fs.copy('build/views/index', 'src/views/index', (_) => {
+      fs.copy('build/views/index.multi.tsx', 'src/views/index/index.tsx')
+    })
+    fs.copy('build/views/list', 'src/views/list')
     fs.copy('build/vite/index.multi.html', 'index.html')
-    fs.copy('build/vite/page1.html', 'page1.html')
-    fs.copy('build/vite/page2.html', 'page2.html')
+    fs.copy('build/vite/list.html', 'list.html')
   }
 }
 

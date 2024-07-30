@@ -9,14 +9,13 @@ export default {
   single: false,
   server: {
     port: 8080,
-    proxy: {
+    proxy: [{
       // 如果是 /api 打头，则访问地址如下
-      '/api': {
-        target: 'https://www.baidu.com',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, '')
-      },
-    },
+      context: ['/api'],
+      target: 'https://www.baidu.com',
+      pathRewrite: { '^/api': '' },
+      changeOrigin: true,
+    }]
   },
   dll: ['vue', 'vuex', 'vue-router', 'axios'],
   analyzerReport: false,

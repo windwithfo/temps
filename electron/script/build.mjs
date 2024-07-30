@@ -20,6 +20,7 @@ import {
 } from 'unplugin-vue-components/resolvers'
 
 const viteConfig = defineConfig({
+  base: './',
   css: {
     charset: false,
     preprocessorOptions: { scss: { charset: false } }

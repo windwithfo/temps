@@ -3,7 +3,7 @@
  * @author dongkunshan(dongkunshan210816@credithc.com)
  */
 
-import { Router } from '../../deps.ts'
+import { Router } from 'oak'
 import { login }  from '../controller/user.ts'
 
 export const userRouter = new Router()

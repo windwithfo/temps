@@ -3,14 +3,10 @@
  * @author dongkunshan(dongkunshan210816@credithc.com)
  */
 
-import getRoutes from './router.tsx'
-import { Hello } from './components/Hello.tsx'
-
-import {
-  React,
-  Link,
-  StaticRouter,
-} from '../../deps.ts'
+import React                  from 'react'
+import getRoutes              from './router.tsx'
+import { Link, StaticRouter } from 'react-router'
+import { Hello }              from './components/Hello.tsx'
 
 export const App = (url = '/') => {
   return (

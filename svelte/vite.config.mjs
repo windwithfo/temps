@@ -3,7 +3,7 @@ import path                         from 'path'
 import { VitePWA }                  from 'vite-plugin-pwa'
 import { compression }              from 'vite-plugin-compression2'
 import eslintPlugin                 from '@nabla/vite-plugin-eslint'
-import StylelintPlugin              from 'vite-plugin-stylelint-serve'
+import StylelintPlugin              from 'vite-plugin-stylelint'
 import { VitePluginPrefetchModule } from 'vite-plugin-prefetch-module'
 import { svelte }                   from '@sveltejs/vite-plugin-svelte'
 

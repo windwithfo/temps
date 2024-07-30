@@ -8,24 +8,17 @@ block content
     el-button 默认按钮
 </template>
 
-<script>
+<script setup>
   import { name } from '../js'
   import axios    from 'axios'
   import { onMounted } from 'vue'
 
-  export default {
-    name: 'listPage',
-    setup() {
-      console.log(name)
-      let ret
-      onMounted(async () => {
-        ret = await axios('/static/mock/errorCode.json')
-        console.log(ret.data)
-      })
+  console.log(name)
 
-      return {
-        ret
-      }
-    }
-  }
+  let ret
+
+  onMounted(async () => {
+    ret = await axios('/mock/errorCode.json')
+    console.log(ret.data)
+  })
 </script>

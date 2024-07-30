@@ -20,19 +20,19 @@ block content
       layout="prev, pager, next"
       :total="pageData.list.totalNum"
       :page-size="pageData.list.pageSize"
-      @current-change="pageChagen"
+      @current-change="pageChange"
     )
     el-tree(:data="pageData.tree" @node-click="handleNodeClick")
     el-radio-group(v-model="sendData.radio")
       el-radio(
         v-for="(item, index) in pageData.radio"
-        :label="item.value"
+        :value="item.value"
         :key="index"
       ) {{ item.text }}
     el-checkbox-group(v-model="sendData.checkbox")
       el-checkbox(
         v-for="(item, index) in pageData.checkbox"
-        :label="item.value"
+        :value="item.value"
         :key="index"
       ) {{ item.text }}
     el-select(v-model="sendData.select" placeholder="请选择")
@@ -49,6 +49,7 @@ block content
         :name="item.value"
         :key="index"
       ) {{ item.text }}
+    el-button(@click="showSend") 提交
     br
     el-breadcrumb(separator=">")
       el-breadcrumb-item(v-for="(item, index) in pageData.bread" :key="index")
@@ -57,64 +58,60 @@ block content
           a(:href="item.url") {{ item.text }}
 </template>
 
-<script>
+<script setup>
   import { onMounted, reactive } from 'vue'
   import { useStore } from 'vuex'
   import { name } from '../js'
   import axios   from 'axios'
 
-  export default {
-    setup() {
-      const store = useStore()
-      console.log(name)
-      const pageData = reactive({
-        list: {
-          data: []
-        }
-      })
-      const sendData = reactive({
-        radio: '',
-        checkbox: '',
-        select: '',
-        tab: ''
-      })
-      const userInfo = store.state.user.userInfo
-
-      const getData = async () => {
-        const ret = await axios('/mock/temp.json')
-        Object.assign(pageData, ret.data)
-        sendData.radio = pageData.radioDefaul
-        sendData.checkbox = pageData.checkboxDefaul
-        sendData.select = pageData.selectDefault
-        sendData.tab = pageData.tabDefault
-      }
-
-      onMounted(async () => {
-        getData()
-      })
-
-      return {
-        pageData,
-        sendData,
-        userInfo
-      }
+  const store = useStore()
+  console.log(name)
+  // variable
+  const pageData = reactive({
+    list: {
+      totalNum: 0,
+      pageSize: 10,
+      data: []
     },
+    checkbox: []
+  })
 
-    methods: {
-      getData() {
-        console.log('data')
-      },
-      handleClick(tab) {
-        console.log(tab.index)
-      },
+  const sendData = reactive({
+    radio: '',
+    checkbox: [],
+    select: '',
+    tab: ''
+  })
+  const userInfo = store.state.user.userInfo
 
-      pageChagen(pageNum) {
-        console.log(pageNum)
-      },
+  const getData = async () => {
+    const ret = await axios('./mock/temp.json')
+    Object.assign(pageData, ret.data)
+    sendData.radio = pageData.radioDefaul
+    sendData.checkbox = pageData.checkboxDefaul
+    sendData.select = pageData.selectDefault
+    sendData.tab = pageData.tabDefault
+  }
+  
+  // alive
+  onMounted(async () => {
+    getData()
+  })
 
-      handleNodeClick(data) {
-        console.log(data.value)
-      },
-    },
+  // method
+  const handleClick = (tab) => {
+    console.log(tab.index)
+  }
+
+  const pageChange = (pageNum) => {
+    console.log(pageNum)
+  }
+
+  const handleNodeClick = (data) => {
+    console.log(data.value)
+  }
+
+  const showSend = () => {
+    console.log(sendData)
   }
 </script>

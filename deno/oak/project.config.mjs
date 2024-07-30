@@ -2,8 +2,6 @@
  * @file 项目全局配置
  * @author dongkunshan(windwithfo@yeah.net)
  */
-import { resolve } from 'path'
-
 export default {
   view: 'deno',
   server: {

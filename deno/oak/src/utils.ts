@@ -3,7 +3,8 @@
  * @author dongkunshan(dongkunshan210816@credithc.com)
  */
 
-import { chalkin, Logger } from '../deps.ts'
+import chalkin from 'chalkin'
+import  Logger from 'logger'
 
 export const logger = new Logger()
 

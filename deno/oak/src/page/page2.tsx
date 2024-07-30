@@ -3,8 +3,8 @@
  * @author dongkunshan(windwithfo@yeah.net)
  */
 
+import React           from 'react'
 import { getUrlParam } from '../utils.ts'
-import { React }       from '../../deps.ts'
 
 function Page2(route: any) {
   const { name } = route.match.params

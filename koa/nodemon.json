@@ -1,29 +1,29 @@
 {
-    "restartable": "rs",
-    "ignore": [
-      ".git",
-      "node_modules/**/node_modules"
-    ],
-    "verbose": true,
-    "execMap": {
-      "js": "node --harmony"
-    },
-    "events": {
-      "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
-    },
-    "legacyWatch": true,
-    "watch": [
-      "nodemon.json",
-      "server.mjs",
-      "router.mjs",
-      "query.mjs",
-      "router",
-      "controller",
-      "graphql"
-    ],
-    "env": {
-      "NODE_ENV": "development",
-      "port": 3000
-    },
-    "ext": "js,json,pug,mjs,gql"
-  }
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "events": {
+    "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
+  },
+  "legacyWatch": true,
+  "watch": [
+    "nodemon.json",
+    "server.mjs",
+    "router.mjs",
+    "query.mjs",
+    "router",
+    "controller",
+    "graphql"
+  ],
+  "env": {
+    "NODE_ENV": "development",
+    "port": 3000
+  },
+  "ext": "js,json,pug,mjs,gql"
+}

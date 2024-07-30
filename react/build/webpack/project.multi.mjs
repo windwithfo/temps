@@ -8,14 +8,13 @@ export default {
   single: false,
   server: {
     port: 8080,
-    proxy: {
+    proxy: [{
       // 如果是 /api 打头，则访问地址如下
-      '/api': {
-        target: 'https://www.baidu.com',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, '')
-      },
-    },
+      context: ['/api'],
+      target: 'https://www.baidu.com',
+      pathRewrite: { '^/api': '' },
+      changeOrigin: true,
+    }]
   },
   dll: ['mobx', 'react', 'react-dom', 'mobx-react', 'react-loadable', 'react-router-dom', 'axios'],
   analyzerReport: false,
@@ -36,30 +35,16 @@ export default {
     }
   },
   {
-    page: 'page1',
+    page: 'list',
     template: 'script/config/html.ejs',
-    path: 'view/page1/page1',
-    title: 'page1',
+    path: 'view/list/index',
+    title: 'list',
     meta: {
-      keywords: 'page1',
-      description: 'page1',
-      viewport: 'initial-scale=1, maximum-scale=1',
-      'format-detection': 'telephone=no',
-      'format-detection': 'email=no'
-    }
-  },
-  {
-    page: 'page2',
-    template: 'script/config/html.ejs',
-    path: 'view/page2/page2',
-    title: 'page2',
-    meta: {
-      keywords: 'page2',
-      description: 'page2',
+      keywords: 'list',
+      description: 'list',
       viewport: 'initial-scale=1, maximum-scale=1',
       'format-detection': 'telephone=no',
       'format-detection': 'email=no'
     }
   }]
 }
- 

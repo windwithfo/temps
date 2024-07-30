@@ -7,8 +7,8 @@ import { merge, Log }   from './utils.mjs'
 import vitePluginImp    from 'vite-plugin-imp'
 import react            from '@vitejs/plugin-react'
 import config           from '../project.config.mjs'
+import StylelintPlugin  from 'vite-plugin-stylelint'
 import eslintPlugin     from '@nabla/vite-plugin-eslint'
-import StylelintPlugin  from 'vite-plugin-stylelint-serve'
 import {
   defineConfig,
   createServer
@@ -42,7 +42,7 @@ const viteConfig = defineConfig({
     eslintPlugin({
       eslintOptions: {
         fix: true,
-        overrideConfigFile: path.resolve('script/config/eslint.js')
+        overrideConfigFile: path.resolve('script/config/eslint.mjs')
       },
       shouldLint: (path) => path.match(/\/src\/[^?]*\.([jt]s|[jt]sx)$/)
     }),

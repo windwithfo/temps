@@ -11,7 +11,7 @@ import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader'
 const typeDefs = await loadSchema('./graphql/*.gql', {
   // load from multiple files using glob
   loaders: [
-      new GraphQLFileLoader()
+    new GraphQLFileLoader()
   ]
 })
 

@@ -3,7 +3,7 @@
  * @author dongkunshan(dongkunshan210816@credithc.com)
  */
 
-import { Application, etag }   from '../deps.ts'
+import { Application, etag }   from 'oak'
 import { Log, setEnv, logger } from './utils.ts'
 import router                  from './router/index.ts'
 
