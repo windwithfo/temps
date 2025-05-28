@@ -1,0 +1,65 @@
+:root {
+  font-family: PingFang SC, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #666;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  /* quarkd 样式变量 */
+  --toast-max-width: 280px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 390px;
+  min-height: 100vh;
+  background-color: #FF4955;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  width: 100%;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #fff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 14Px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: calc(100vw/390*16);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 32Px;
+  }
+}

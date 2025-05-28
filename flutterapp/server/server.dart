@@ -27,7 +27,7 @@ void handleRequest(HttpRequest request) {
 
 void handleGet(HttpRequest request) {
   final String path = request.uri.path.substring(1);
-  final String fileName = path.length == 0 ? 'index.html' : path;
+  final String fileName = path.isEmpty ? 'index.html' : path;
   final File targetFile = File(fileName);
   final guess = request.uri.queryParameters['q'];
   final response = request.response;
